@@ -16,7 +16,7 @@ minimal: false             # use a dark header
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {title: "Home", file: "index.html"}
+  - {title: "Home", file: "projects.md"}
   - {title: "CV", url: "https://drive.google.com/file/d/1pRQyadjBEq428JUL6Ls3j7Z_UFcw9tTK/view?usp=sharing"}
   - {title: "Projects", file: "README.md"}
 
