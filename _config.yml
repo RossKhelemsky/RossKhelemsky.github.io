@@ -16,8 +16,8 @@ minimal: false             # use a dark header
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {file: "Ross_Khelemsky_CV_6_26_2023.pdf", title: CV, icon: home}
-  - {title: "Projects", file: "/projects.md"}
+  - {file: "/Ross_Khelemsky_CV_6_26_2023.pdf", title: CV, icon: home}
+  - {title: "Projects", file: "/README.md"}
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:rosskhel00@gmail.com"}
