@@ -97,7 +97,7 @@ To get the consumption amount with a $1 tax increase (and no rebate), I plug in 
 Appendix A: Python code for regression and interactive 3d plot
 
 
-{% highlight python %} 
+{% highlight py %} 
 import pandas as pd
 import statsmodels.api as sm
 import numpy as np
