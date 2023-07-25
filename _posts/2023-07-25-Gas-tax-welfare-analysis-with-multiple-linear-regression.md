@@ -39,7 +39,7 @@ summary(gastaxdata[c("G", "P_G_R", "I_R")])
 
 I then retrieve summary statistics for the transformed data:
 
-Then I run OLS multiple linear regression, where monthly gas consumption ($\mathbf{G}$) is dependent on the real price of gas ($\mathbf{P_GR}$) and real monthly income ($\mathbf{I_R}$). This fits a plane to the data which minimizes the sum of squared residual errors, with the functional form: 
+Then I run OLS multiple linear regression, where monthly gas consumption ($\mathbf{G}$) is dependent on the real price of gas ($\mathbf{P_GR}$) and real monthly income ($\mathbf{I_R}$). This fits a plane to the data which minimizes the sum of squared residual errors between the observed and predicted values of $\mathbf{G}$, of the functional form: 
 
 $$\mathbf{G}=\gamma \mathbf{I_R} + \beta \mathbf{P_GR} + \alpha$$
 
@@ -48,6 +48,26 @@ $$\mathbf{G}=\gamma \mathbf{I_R} + \beta \mathbf{P_GR} + \alpha$$
 fit <- lm(G ~ P_G_R + I_R, data = gastaxdata)
 summary(fit)
 {% endhighlight %}
+
+$\gamma$, the slope estimate for I_R(real monthly income), is 0.01187. This means that
+for a 1\$ rise in real monthly income (with the real price of gas held constant),
+monthly gas consumption is expected to increase by 0.01187 gal/mo.
+
+$\beta$, the slope estimate for P_G_R(real price of gas), is −14.1364. This means
+that for a 1$ rise in the real price of gas (with real monthly income held con-
+stant), monthly gas consumption is expected to decrease by 14.136 gal/mo.
+
+
+$\alpha$, the intercept estimate, is 39.09754. This means that if real incomes and
+the real price of gas were 0$, per capita monthly gas consumption would be
+39.09754 gal/mo. While it may not have a real-world interpretation(since the
+real price of gas isn't going to ever be 0), it is still necessary
+to compute to find the best fit line(or plane, in this instance).
+The adjusted $R^2$ of 0.8979 implies that 89.79% of the variation in gas con-
+sumption can be explained by changes in the real price of gas and real income.
+Then I plot demand curves for gas(consumption as a function of price), at
+different levels of real monthly income held constant:
+
 
 Now I can plot demand curves for gas (consumption as a function of price) at different levels of real monthly income held constant:
 
