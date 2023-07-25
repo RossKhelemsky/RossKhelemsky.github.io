@@ -8,7 +8,7 @@ Today I am going to analyze the proposed $1 increase in the gas tax in 2005 usin
 
 Let's begin:
 
-{% highlight R %} 
+{% highlight r %} 
 library(haven)
 
 gastaxdata <- (SAS_data)
@@ -21,7 +21,7 @@ SAS_data is the dataset I am going to use for this analysis. Since it is in SAS 
 Summary statistics for the transformed data:
 
 
-{% highlight R %} 
+{% highlight Rstudio %} 
 gastaxdata$G <- gastaxdata$G_PC_AN / 12
 gastaxdata$I_N <- gastaxdata$I_N_AN / 12
 
@@ -33,14 +33,14 @@ summary(gastaxdata[c("G", "P_G_R", "I_R")])
 Next, I run OLS multiple linear regression, where monthly gas consumption is dependent on the real price of gas and real monthly income. This fits a plane to the data, minimizing the sum of squared residuals:
 
 
-{% highlight R %} 
+{% highlight Rstudio %} 
 fit <- lm(G ~ P_G_R + I_R, data = gastaxdata)
 summary(fit)
 {% endhighlight %}
 
 Now I can plot demand curves for gas (consumption as a function of price) at different levels of real monthly income held constant:
 
-{% highlight R %} 
+{% highlight Rstudio %} 
 library(ggplot2)
 
 p1 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() + 
@@ -58,14 +58,14 @@ p2 + ggtitle("Estimated demand curve with I_R held constant at its median value 
 {% endhighlight %}
 
 
-{% highlight R %} 
+{% highlight Rstudio %} 
 p3 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() + 
       geom_abline(intercept = 4.8277, slope = -0.0707)
 
 p3 + ggtitle("Estimated demand curve with I_R held constant at its 2005 value (2455.67)")
 {% endhighlight %}
 
-Also, we
+Also, we can rerun this regression in python and use plotly create an interactive 3d plot of the plane fit to the data. Code is shown in Appendix A.
 
 [Download 3D Plot](/3d_plot.html)
 
@@ -76,6 +76,92 @@ G_notax = 39.09754 - (14.1364 * 1.828) + (2455.67 * 0.01187) = 42.405 gal/mo
 The actual amount was 44.113, so the error is not very large for this estimate.
 
 To get the consumption amount with a $1 tax increase (and no rebate), I plug in the same I_R and 2.828 for P_G_R. Let's call this amount G_tax_uncomp.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Appendix A: Python code for regression and interactive 3d plot
+
+
+{% highlight python %} 
+import pandas as pd
+import statsmodels.api as sm
+import numpy as np
+import plotly.graph_objects as go
+
+# Load the SAS file
+df = pd.read_sas(r'C:\Users\rossk\OneDrive\Desktop\SASdata.sas7bdat', format='sas7bdat')
+
+# Transform annual gas consumption and nominal income data into monthly data
+df['G_PC_MO'] = df['G_PC_AN'] / 12
+df['I_N_MO'] = df['I_N_AN'] / 12
+
+# Divide the price of gas and nominal income by the CPI for all other goods
+df['P_G_R'] = df['P_G_N'] / df['P_AOG']
+df['I_R_MO'] = df['I_N_MO'] / df['P_AOG']
+
+# Define the dependent variable and independent variables
+Y = df['G_PC_MO']
+X = df[['I_R_MO', 'P_G_R']]
+
+# Add a constant to the independent variables matrix
+X = sm.add_constant(X)
+
+# Fit the OLS model
+model = sm.OLS(Y, X)
+results = model.fit()
+
+# Get the coefficients
+coefficients = results.params
+print(coefficients)
+
+# Create a range of values for I_R_MO and P_G_R
+x_range = np.arange(df['I_R_MO'].min(), df['I_R_MO'].max(), (df['I_R_MO'].max() - df['I_R_MO'].min())/10)
+y_range = np.arange(df['P_G_R'].min(), df['P_G_R'].max(), (df['P_G_R'].max() - df['P_G_R'].min())/10)
+
+# Create a meshgrid for I_R_MO and P_G_R
+x, y = np.meshgrid(x_range, y_range)
+
+# Compute corresponding z values (G_PC_MO) for the plane
+z = coefficients.const + coefficients.I_R_MO*x + coefficients.P_G_R*y
+
+# Create a 3D scatter plot
+scatter = go.Scatter3d(x=df['I_R_MO'], y=df['P_G_R'], z=df['G_PC_MO'], mode='markers', 
+                        marker=dict(size=3, color='blue', opacity=0.5), name='Data')
+
+# Create a surface plot for the plane
+plane = go.Surface(x=x, y=y, z=z, colorscale=[[0, 'red'], [1, 'red']], opacity=0.3, name='Fit')
+
+# Layout
+layout = go.Layout(scene=dict(xaxis_title='Real Monthly Income', yaxis_title='Real Price of Gas', 
+                              zaxis_title='Monthly Gas Consumption'), 
+                   width=700, margin=dict(r=20, b=10, l=10, t=10))
+
+# Figure
+fig = go.Figure(data=[scatter, plane], layout=layout)
+
+# Save the plot as an HTML file
+fig.write_html("3d_plot.html")
+{% endhighlight %}
+
+Appendix B:
+
+
 
 
 
