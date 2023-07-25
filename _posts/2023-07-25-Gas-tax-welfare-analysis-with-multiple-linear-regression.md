@@ -58,7 +58,7 @@ that for a 1$ rise in the real price of gas (with real monthly income held con-
 stant), monthly gas consumption is expected to decrease by 14.136 gal/mo.
 
 
-\( \alpha\)$\alpha$, the intercept estimate, is 39.09754. This means that if real incomes and
+\( \alpha\) $\alpha$, the intercept estimate, is 39.09754. This means that if real incomes and
 the real price of gas were 0$, per capita monthly gas consumption would be
 39.09754 gal/mo. While it may not have a real-world interpretation(since the
 real price of gas isn't going to ever be 0), it is still necessary
