@@ -21,7 +21,7 @@ SAS_data is the dataset I am going to use for this analysis. Since it is in SAS 
 Summary statistics for the transformed data:
 
 
-{% highlight Rstudio %} 
+``` r
 gastaxdata$G <- gastaxdata$G_PC_AN / 12
 gastaxdata$I_N <- gastaxdata$I_N_AN / 12
 
@@ -29,7 +29,7 @@ gastaxdata$P_G_R <- gastaxdata$P_G_N / gastaxdata$P_AOG
 gastaxdata$I_R <- gastaxdata$I_N / gastaxdata$P_AOG
 
 summary(gastaxdata[c("G", "P_G_R", "I_R")])
-{% endhighlight %}
+'''
 Next, I run OLS multiple linear regression, where monthly gas consumption is dependent on the real price of gas and real monthly income. This fits a plane to the data, minimizing the sum of squared residuals:
 
 
