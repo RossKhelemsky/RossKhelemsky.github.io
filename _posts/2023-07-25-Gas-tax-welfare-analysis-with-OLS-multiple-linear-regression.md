@@ -65,6 +65,10 @@ p3 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
 p3 + ggtitle("Estimated demand curve with I_R held constant at its 2005 value (2455.67)")
 {% endhighlight %}
 
+Also, we
+
+[Download 3D Plot](/3d_plot.lnk)
+
 Now that I have the regression model, I can plug in the 2005 values for I_R and P_G_R (2455.67 and 1.828, respectively) to estimate the pre-tax consumption amount. Let's call this G_notax.
 
 G_notax = 39.09754 - (14.1364 * 1.828) + (2455.67 * 0.01187) = 42.405 gal/mo
@@ -72,4 +76,6 @@ G_notax = 39.09754 - (14.1364 * 1.828) + (2455.67 * 0.01187) = 42.405 gal/mo
 The actual amount was 44.113, so the error is not very large for this estimate.
 
 To get the consumption amount with a $1 tax increase (and no rebate), I plug in the same I_R and 2.828 for P_G_R. Let's call this amount G_tax_uncomp.
+
+
 
