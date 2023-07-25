@@ -39,7 +39,9 @@ summary(gastaxdata[c("G", "P_G_R", "I_R")])
 
 I then retrieve summary statistics for the transformed data:
 
-Then I run OLS multiple linear regression, where monthly gas consumption is dependent on the real price of gas and real monthly income. This fits a plane to the data, minimizing the sum of squared residuals, in the form:
+Then I run OLS multiple linear regression, where monthly gas consumption is dependent on the real price of gas and real monthly income. This fits a plane to the data, minimizing the sum of squared residuals, in the form: 
+
+$$ G = /gamma I_R + /beta P_G_R + /alpha$$
 
 {% highlight r %} 
 fit <- lm(G ~ P_G_R + I_R, data = gastaxdata)
