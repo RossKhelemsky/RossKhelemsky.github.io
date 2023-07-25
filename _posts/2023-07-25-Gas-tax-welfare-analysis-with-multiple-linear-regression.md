@@ -18,7 +18,13 @@ summary(gastaxdata)
 
 SAS_data is the dataset I am going to use for this analysis. Since it is in SAS format, I have to use the haven package to import it into Rstudio. It contains time-series data on annual per capita gas consumption (in gallons), annual per capita nominal income (disposable less savings), average nominal price of gas (per gallon), and price of all other goods (CPI less energy) from 1984-2005.
 
-Summary statistics for the transformed data:
+
+Summary(gastaxdata) displays summary statistics for the variables in the dataset (minimum, 1st quartile, median mean, 3rd quartile, and maximum). The summary statistics for gastaxdata are displayed in the figure below:
+
+
+Next I convert annual per capita gasoline consumption and nominal income
+to monthly. Then I convert nominal monthly income and the nominal price of
+gas into real monthly income and the real price of gas by deflating by the CPI:
 
 {% highlight r %} 
 gastaxdata$G <- gastaxdata$G_PC_AN / 12
@@ -30,7 +36,9 @@ gastaxdata$I_R <- gastaxdata$I_N / gastaxdata$P_AOG
 summary(gastaxdata[c("G", "P_G_R", "I_R")])
 {% endhighlight %}
 
-Next, I run OLS multiple linear regression, where monthly gas consumption is dependent on the real price of gas and real monthly income. This fits a plane to the data, minimizing the sum of squared residuals:
+I then retrieve summary statistics for the transformed data:
+
+Then I run OLS multiple linear regression, where monthly gas consumption is dependent on the real price of gas and real monthly income. This fits a plane to the data, minimizing the sum of squared residuals, in the form:
 
 {% highlight r %} 
 fit <- lm(G ~ P_G_R + I_R, data = gastaxdata)
@@ -142,8 +150,17 @@ fig = go.Figure(data=[scatter, plane], layout=layout)
 fig.write_html("3d_plot.html")
 {% endhighlight %}
 
-Appendix B:
+Appendix B: Considerations on improving this analysis
 
+If you've made it this far, I'm open to hearing your feedback to improve on this analysis for future applications. Should I add any of the following?:
+- An explanation of the standard errors and significance of the t values for the slopes/intercept in the explanation of the regression
+- Welfare analysis for the uncompensated tax
+- Consideration of other social costs avoided like congestion
+- More discussion of Limitations of the analysis, supply side effects, potential omitted variables in regression, problems of measuring utility, distributional effects, etc.
+- Extension of this analysis to current year
+- Extension of this analysis with different tax rates
+
+Or would that be too much clutter? This already feels like a lot for an undergrad writing sample, but also many (most?)competitive applicants already have multiple coauthored papers/Phd level econ coursework/A's in real analysis and topology by my age so I think it needs to be extensive lol\\
 
 
 
