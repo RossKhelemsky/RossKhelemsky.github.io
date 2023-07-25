@@ -73,14 +73,3 @@ The actual amount was 44.113, so the error is not very large for this estimate.
 
 To get the consumption amount with a $1 tax increase (and no rebate), I plug in the same I_R and 2.828 for P_G_R. Let's call this amount G_tax_uncomp.
 
-G_tax_uncomp = 39.09754 - (14.1364 * 2.828) + (2455.67 * 0.01187) = 28.2686 gal/mo
-
-Now I can estimate the change in utility using the indirect utility function from JA Hausman's paper ("Exact Consumer’s Surplus and Deadweight Loss” American Economic Review, 71:4, Sept. 1981, p. 668):
-
-The indirect utility function indexes the consumer's utility based on the real price of a good (P_G_R), real income (I_R), and the regression slopes and intercepts above for those variables. The higher (more positive) it is, the better off the consumer:
-
-Indirect utility = U(P_G_R,I_R) = e^{-\gamma*P_G_R} \cdot \left(I_R + \left(\frac{1}{\gamma} \cdot \left(\beta \cdot P_G_R + \frac{\beta}{\gamma} + \alpha\right)\right)\right)
-
-where $\gamma$ is the regression slope coefficient for I_R (0.01187), $\beta$ is the regression slope coefficient for P_G_R (-14.1364), and $\alpha$ is the intercept (39.09754). Plugging in the 2005 values for P_G_R and I_R without the tax (U_notax), and the 2005 values with the tax and no compensation (U_tax_uncomp), we get:
-
-
