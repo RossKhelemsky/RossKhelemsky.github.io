@@ -66,7 +66,7 @@ p3 + ggtitle("Estimated demand curve with I_R held constant at its 2005 value (2
 
 Also, we can rerun this regression in python and use plotly create an interactive 3d plot of the plane fit to the data. Code is shown in Appendix A.
 
-[Download 3D Plot](/3d_plot.html)
+[View 3D Plot](/3d_plot.html)
 
 Now that I have the regression model, I can plug in the 2005 values for I_R and P_G_R (2455.67 and 1.828, respectively) to estimate the pre-tax consumption amount. Let's call this G_notax.
 
