@@ -49,11 +49,11 @@ fit <- lm(G ~ P_G_R + I_R, data = gastaxdata)
 summary(fit)
 {% endhighlight %}
 
-$\gamma$, the slope estimate for $I_R$, is 0.01187. This means that
+$\gamma$, the slope estimate for $\mathbf{I_R}$, is 0.01187. This means that
 for a 1\$ rise in real monthly income (with the real price of gas held constant),
 monthly gas consumption is expected to increase by 0.01187 gal/mo.
 
-$\beta$, the slope estimate for $P_GR$, is −14.1364. This means
+$\beta$, the slope estimate for $\mathbf{P_GR}$, is −14.1364. This means
 that for a 1$ rise in the real price of gas (with real monthly income held con-
 stant), monthly gas consumption is expected to decrease by 14.136 gal/mo.
 
