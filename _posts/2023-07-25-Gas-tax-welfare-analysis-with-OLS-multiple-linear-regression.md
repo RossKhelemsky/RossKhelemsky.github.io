@@ -20,8 +20,7 @@ SAS_data is the dataset I am going to use for this analysis. Since it is in SAS 
 
 Summary statistics for the transformed data:
 
-
-``` r
+{% highlight r %} 
 gastaxdata$G <- gastaxdata$G_PC_AN / 12
 gastaxdata$I_N <- gastaxdata$I_N_AN / 12
 
@@ -29,18 +28,18 @@ gastaxdata$P_G_R <- gastaxdata$P_G_N / gastaxdata$P_AOG
 gastaxdata$I_R <- gastaxdata$I_N / gastaxdata$P_AOG
 
 summary(gastaxdata[c("G", "P_G_R", "I_R")])
-'''
+{% endhighlight %}
+
 Next, I run OLS multiple linear regression, where monthly gas consumption is dependent on the real price of gas and real monthly income. This fits a plane to the data, minimizing the sum of squared residuals:
 
-
-{% highlight Rstudio %} 
+{% highlight r %} 
 fit <- lm(G ~ P_G_R + I_R, data = gastaxdata)
 summary(fit)
 {% endhighlight %}
 
 Now I can plot demand curves for gas (consumption as a function of price) at different levels of real monthly income held constant:
 
-{% highlight Rstudio %} 
+{% highlight r %} 
 library(ggplot2)
 
 p1 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() + 
@@ -50,7 +49,7 @@ p1 + ggtitle("Estimated demand curve with I_R held constant at its mean value (2
 {% endhighlight %}
 
 
-{% highlight R %} 
+{% highlight r %} 
 p2 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
       geom_abline(intercept = 4.3956, slope = -0.0707)
 
@@ -58,7 +57,7 @@ p2 + ggtitle("Estimated demand curve with I_R held constant at its median value 
 {% endhighlight %}
 
 
-{% highlight Rstudio %} 
+{% highlight r %} 
 p3 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() + 
       geom_abline(intercept = 4.8277, slope = -0.0707)
 
