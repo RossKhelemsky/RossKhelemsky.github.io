@@ -67,7 +67,7 @@ p3 + ggtitle("Estimated demand curve with I_R held constant at its 2005 value (2
 
 Also, we
 
-[Download 3D Plot](/3d_plot.lnk)
+[Download 3D Plot](/3d_plot.html)
 
 Now that I have the regression model, I can plug in the 2005 values for I_R and P_G_R (2455.67 and 1.828, respectively) to estimate the pre-tax consumption amount. Let's call this G_notax.
 
