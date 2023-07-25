@@ -14,7 +14,7 @@ library(haven)
 gastaxdata <- (SAS_data)
 
 summary(gastaxdata)
- {% endhighlight %}
+{% endhighlight %}
 
 SAS_data is the dataset I am going to use for this analysis. Since it is in SAS format, I have to use the haven package to import it into Rstudio. It contains time-series data on annual per capita gas consumption (in gallons), annual per capita nominal income (disposable less savings), average nominal price of gas (per gallon), and price of all other goods (CPI less energy) from 1984-2005.
 
@@ -29,13 +29,15 @@ gastaxdata$P_G_R <- gastaxdata$P_G_N / gastaxdata$P_AOG
 gastaxdata$I_R <- gastaxdata$I_N / gastaxdata$P_AOG
 
 summary(gastaxdata[c("G", "P_G_R", "I_R")])
- {% endhighlight %}
+{% endhighlight %}
 Next, I run OLS multiple linear regression, where monthly gas consumption is dependent on the real price of gas and real monthly income. This fits a plane to the data, minimizing the sum of squared residuals:
 
 
 {% highlight R %} 
 fit <- lm(G ~ P_G_R + I_R, data = gastaxdata)
 summary(fit)
+{% endhighlight %}
+
 Now I can plot demand curves for gas (consumption as a function of price) at different levels of real monthly income held constant:
 
 {% highlight R %} 
@@ -45,6 +47,7 @@ p1 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
       geom_abline(intercept = 4.4506, slope = -0.0707)
 
 p1 + ggtitle("Estimated demand curve with I_R held constant at its mean value (2006.60)")
+{% endhighlight %}
 
 
 {% highlight R %} 
@@ -52,6 +55,7 @@ p2 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
       geom_abline(intercept = 4.3956, slope = -0.0707)
 
 p2 + ggtitle("Estimated demand curve with I_R held constant at its median value (1941.01)")
+{% endhighlight %}
 
 
 {% highlight R %} 
@@ -59,6 +63,8 @@ p3 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
       geom_abline(intercept = 4.8277, slope = -0.0707)
 
 p3 + ggtitle("Estimated demand curve with I_R held constant at its 2005 value (2455.67)")
+{% endhighlight %}
+
 Now that I have the regression model, I can plug in the 2005 values for I_R and P_G_R (2455.67 and 1.828, respectively) to estimate the pre-tax consumption amount. Let's call this G_notax.
 
 G_notax = 39.09754 - (14.1364 * 1.828) + (2455.67 * 0.01187) = 42.405 gal/mo
