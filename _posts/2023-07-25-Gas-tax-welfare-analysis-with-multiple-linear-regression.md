@@ -39,7 +39,7 @@ summary(gastaxdata[c("G", "P_G_R", "I_R")])
 
 I then retrieve summary statistics for the transformed data:
 
-Then I run OLS multiple linear regression, where monthly gas consumption ($\mathbf{G}$) is dependent on the real price of gas ($\mathbf{P_GR}$) and real monthly income ($\mathbf{I_R}$). This fits a plane to the data which minimizes the sum of squared residual errors between the observed and predicted values of $\mathbf{G}$, of the functional form: 
+Then I run OLS multiple linear regression, where monthly gas consumption ($$\mathbf{G}$) is dependent on the real price of gas ($\mathbf{P_GR}$) and real monthly income ($\mathbf{I_R}$). This fits a plane to the data which minimizes the sum of squared residual errors between the observed and predicted values of $\mathbf{G}$, of the functional form: 
 
 $$\mathbf{G}=\gamma \mathbf{I_R} + \beta \mathbf{P_GR} + \alpha$$
 
