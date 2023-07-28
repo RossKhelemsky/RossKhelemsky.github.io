@@ -123,7 +123,7 @@ based on the real price of a good(P_G_R), real income(I_R), and the regression
 slopes and intercepts above for those variables. The higher(more positive) it is, the better off the consumer:
 Indirect Utility =
 
-$$\mathbf{U(P_{GR}, I_R)} = e^{−\gamma∗\mathbf{P_{GR}} ∗ (\mathbf{I_R} + (\frac{1}{\gamma} ∗ (\beta ∗ P G R + \frac{\beta}{\gamma} + \alpha)))$$
+$$\mathbf{U(P_{GR}, I_R)} = e^{−\gamma∗\mathbf{P_{GR}} ∗ (\mathbf{I_R} + (\frac{1}{\gamma} ∗ (\beta ∗ P_{GR} + \frac{\beta}{\gamma} + \alpha)))$$
 
 
 where γ is the regression slope coefficient for I_R (0.01187), β is the regression
