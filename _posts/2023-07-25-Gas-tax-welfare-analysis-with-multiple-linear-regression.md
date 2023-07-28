@@ -127,17 +127,12 @@ $$\mathbf{U(P_{GR}, I_R)} = e^{-\gamma P_{GR}} * (\mathbf{I_R} + (\frac{1}{\gamm
 
 
 where γ is the regression slope coefficient for I_R (0.01187), β is the regression
-slope coefficient for P_G_R (-14.1364), and α is the intercept (39.09754). Plug-
-ging in the 2005 values for P_G_R and I R without the tax (for U_notax), and the
-2005 values with the tax and no compensation (for U_tax_uncomp), we get consumer utility with and without the tax:
+slope coefficient for P_G_R (-14.1364), and α is the intercept (39.09754). Plugging in the 2005 values for P_G_R and I_R without the tax (for U_notax), and the 2005 values with the tax and no compensation (for U_tax_uncomp), we get consumer utility with and without the tax:
 
-$$ \mathbf{U_{notax}} = \mathbf{U(1.828, 2455.67)} = e^{−0.01187∗1.828} ∗ (2455.67 + ( 1
-0.01187 ∗ (−14.1364 ∗ 1.828 + \frac{−14.1364}{0.01187} + 39.09754) = −94682.17$$
+$$ \mathbf{U_{notax}} = \mathbf{U(1.828, 2455.67)} = e^{−0.01187∗1.828} ∗ (2455.67 + ( \frac{1}{0.01187} ∗ (−14.1364 ∗ 1.828 + \frac{−14.1364}{0.01187} + 39.09754))) = −94682.17$$
 
-U tax uncomp = U (2.828, 2455.67) = e−0.01187∗2.828∗(2455.67+( 1
-0.01187 ∗(−14.1364∗
-2.828 + −14.1364
-0.01187 + 39.09754) = −94716.56
+$$ \mathbf{U tax uncomp} = \mathbf{U(2.828, 2455.67)} = e^{−0.01187∗2.828} ∗ (2455.67 + ( 10.01187 ∗(−14.1364∗
+2.828 + \frac{−14.1364}{0.01187} + 39.09754) = −94716.56
 I can rearrange the terms of the indirect utility function to isolate I R and
 get the expenditure function, which gives the income required to achieve some
 level of utility, given a utility function and prices
