@@ -39,9 +39,9 @@ summary(gastaxdata[c("G", "P_G_R", "I_R")])
 
 I then retrieve summary statistics for the transformed data:
 
-Then I run OLS multiple linear regression, where monthly gas consumption ($\mathbf{G}$) is dependent on the real price of gas ($P_GR$) and real monthly income ($I_R$). This fits a plane to the data which minimizes the sum of squared residual errors between the observed and predicted values of $\mathbf{G}$, of the functional form: 
+Then I run OLS multiple linear regression, where monthly gas consumption (G) is dependent on the real price of gas (P_G_R) and real monthly income (I_R). This fits a plane to the data which minimizes the sum of squared residual errors between the observed and predicted values of $\mathbf{G}$, of the functional form: 
 
-$$\mathbf{G}=\gamma \mathbf{I_R} + \beta \mathbf{P_GR} + \alpha$$
+$$\mathbf{G}=\gamma \mathbf{I_R} + \beta \mathbf{P_{GR}} + \alpha$$
 
 
 {% highlight r %} 
@@ -53,7 +53,7 @@ summary(fit)
 for a 1$ rise in real monthly income (with the real price of gas held constant),
 monthly gas consumption is expected to increase by 0.01187 gal/mo.
 
-β, the slope estimate for $\mathbf{P_GR}$, is −14.1364. This means
+β, the slope estimate for P_GR, is −14.1364. This means
 that for a 1$ rise in the real price of gas (with real monthly income held con-
 stant), monthly gas consumption is expected to decrease by 14.136 gal/mo.
 
@@ -68,8 +68,11 @@ sumption can be explained by changes in the real price of gas and real income.
 Then I plot demand curves for gas(consumption as a function of price), at
 different levels of real monthly income held constant:
 
+The adjusted $R^{2}$ of 0.8979 implies that 89.79% of the variation in gas con-
+sumption can be explained by changes in the real price of gas and real income
 
-Now I can plot demand curves for gas (consumption as a function of price) at different levels of real monthly income held constant:
+
+Now I use gglot to plot demand curves for gas (consumption as a function of price) at different levels of real monthly income held constant:
 
 {% highlight r %} 
 library(ggplot2)
@@ -102,7 +105,7 @@ Also, we can rerun this regression in python and use plotly create an interactiv
 
 Now that I have the regression model, I can plug in the 2005 values for I_R and P_G_R (2455.67 and 1.828, respectively) to estimate the pre-tax consumption amount. Let's call this G_notax.
 
-G_notax = 39.09754 - (14.1364 * 1.828) + (2455.67 * 0.01187) = 42.405 gal/mo
+$$\mathbf{G_{notax}} = 39.09754 - (14.1364 * 1.828) + (2455.67 * 0.01187) = 42.405 gal/mo$$
 
 The actual amount was 44.113, so the error is not very large for this estimate.
 
@@ -123,16 +126,16 @@ import plotly.graph_objects as go
 df = pd.read_sas(r'C:\Users\rossk\OneDrive\Desktop\SASdata.sas7bdat', format='sas7bdat')
 
 # Transform annual gas consumption and nominal income data into monthly data
-df['G_PC_MO'] = df['G_PC_AN'] / 12
-df['I_N_MO'] = df['I_N_AN'] / 12
+df['G'] = df['G_PC_AN'] / 12
+df['I_N'] = df['I_N_AN'] / 12
 
 # Divide the price of gas and nominal income by the CPI for all other goods
 df['P_G_R'] = df['P_G_N'] / df['P_AOG']
-df['I_R_MO'] = df['I_N_MO'] / df['P_AOG']
+df['I_R'] = df['I_N'] / df['P_AOG']
 
 # Define the dependent variable and independent variables
-Y = df['G_PC_MO']
-X = df[['I_R_MO', 'P_G_R']]
+Y = df['G']
+X = df[['I_R', 'P_G_R']]
 
 # Add a constant to the independent variables matrix
 X = sm.add_constant(X)
@@ -145,18 +148,18 @@ results = model.fit()
 coefficients = results.params
 print(coefficients)
 
-# Create a range of values for I_R_MO and P_G_R
-x_range = np.arange(df['I_R_MO'].min(), df['I_R_MO'].max(), (df['I_R_MO'].max() - df['I_R_MO'].min())/10)
+# Create a range of values for I_R and P_G_R
+x_range = np.arange(df['I_R'].min(), df['I_R'].max(), (df['I_R'].max() - df['I_R'].min())/10)
 y_range = np.arange(df['P_G_R'].min(), df['P_G_R'].max(), (df['P_G_R'].max() - df['P_G_R'].min())/10)
 
 # Create a meshgrid for I_R_MO and P_G_R
 x, y = np.meshgrid(x_range, y_range)
 
 # Compute corresponding z values (G_PC_MO) for the plane
-z = coefficients.const + coefficients.I_R_MO*x + coefficients.P_G_R*y
+z = coefficients.const + coefficients.I_R*x + coefficients.P_G_R*y
 
 # Create a 3D scatter plot
-scatter = go.Scatter3d(x=df['I_R_MO'], y=df['P_G_R'], z=df['G_PC_MO'], mode='markers', 
+scatter = go.Scatter3d(x=df['I_R'], y=df['P_G_R'], z=df['G'], mode='markers', 
                         marker=dict(size=3, color='blue', opacity=0.5), name='Data')
 
 # Create a surface plot for the plane
@@ -184,7 +187,7 @@ If you've made it this far, I'm open to hearing your feedback to improve on this
 - Extension of this analysis to current year
 - Extension of this analysis with different tax rates
 
-Or would that be too much clutter? This already feels like a lot for an undergrad writing sample, but also many (most?)competitive applicants already have multiple coauthored papers/Phd level econ coursework/A's in real analysis and topology by my age so I think it needs to be extensive lol\\
+Or would that be too much clutter? This already feels like a lot for an undergrad writing sample, but also many (most?)competitive applicants already have multiple coauthored papers/Phd level econ coursework/A's in real analysis and topology by my age so I think it needs to be extensive lol
 
 
 
