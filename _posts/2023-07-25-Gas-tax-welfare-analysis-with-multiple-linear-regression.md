@@ -22,12 +22,13 @@ SAS_data is the dataset I am going to use for this analysis. Since it is in SAS 
 
 Summary(gastaxdata) displays summary statistics for the variables in the dataset (minimum, 1st quartile, median mean, 3rd quartile, and maximum). The summary statistics for gastaxdata are displayed in the figure below:
 
+(Insert figure 1 here)
 
 Next I convert annual per capita gasoline consumption and nominal income
 to monthly. Then I convert nominal monthly income and the nominal price of
 gas into real monthly income and the real price of gas by deflating by the CPI:
 
-{% highlight r %} 
+{% highlight r %}
 gastaxdata$G <- gastaxdata$G_PC_AN / 12
 gastaxdata$I_N <- gastaxdata$I_N_AN / 12
 
@@ -38,6 +39,8 @@ summary(gastaxdata[c("G", "P_G_R", "I_R")])
 {% endhighlight %}
 
 I then retrieve summary statistics for the transformed data:
+
+(Insert figure 2 here)
 
 Then I run OLS multiple linear regression, where monthly gas consumption (G) is dependent on the real price of gas (P_G_R) and real monthly income (I_R). This fits a plane to the data which minimizes the sum of squared residual errors between the observed and predicted values of $\mathbf{G}$, of the functional form: 
 
@@ -53,7 +56,7 @@ summary(fit)
 for a 1$ rise in real monthly income (with the real price of gas held constant),
 monthly gas consumption is expected to increase by 0.01187 gal/mo.
 
-β, the slope estimate for P_GR, is −14.1364. This means
+β, the slope estimate for P_G_R, is −14.1364. This means
 that for a 1$ rise in the real price of gas (with real monthly income held con-
 stant), monthly gas consumption is expected to decrease by 14.136 gal/mo.
 
@@ -65,14 +68,8 @@ real price of gas isn't going to ever be 0), it is still necessary
 to compute to find the best fit line(or plane, in this instance).
 The adjusted $R^2$ of 0.8979 implies that 89.79% of the variation in gas con-
 sumption can be explained by changes in the real price of gas and real income.
-Then I plot demand curves for gas(consumption as a function of price), at
-different levels of real monthly income held constant:
 
-The adjusted $R^{2}$ of 0.8979 implies that 89.79% of the variation in gas con-
-sumption can be explained by changes in the real price of gas and real income
-
-
-Now I use gglot to plot demand curves for gas (consumption as a function of price) at different levels of real monthly income held constant:
+Now I use gglot to plot demand curves for gas (monthly consumption in gal/mo as a function of real price) at different levels of real monthly income held constant:
 
 {% highlight r %} 
 library(ggplot2)
@@ -83,6 +80,7 @@ p1 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
 p1 + ggtitle("Estimated demand curve with I_R held constant at its mean value (2006.60)")
 {% endhighlight %}
 
+(Insert figure 3 here)
 
 {% highlight r %} 
 p2 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
@@ -91,6 +89,7 @@ p2 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
 p2 + ggtitle("Estimated demand curve with I_R held constant at its median value (1941.01)")
 {% endhighlight %}
 
+(Insert figure 4 here)
 
 {% highlight r %} 
 p3 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() + 
@@ -98,6 +97,8 @@ p3 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
 
 p3 + ggtitle("Estimated demand curve with I_R held constant at its 2005 value (2455.67)")
 {% endhighlight %}
+
+(Insert figure 5 here)
 
 Also, we can rerun this regression in python and use plotly create an interactive 3d plot of the plane fit to the data. Code is shown in Appendix A.
 
@@ -115,16 +116,10 @@ G tax uncomp = 39.09754 − (14.1364 ∗ 2.828) + (2455.67 ∗ 0.01187) = 28.268
 gal/mo
 
 
-After that, I can estimate the change in consumer utility from the tax using the indirect utility function
-from JA Hausman’s paper(”Exact Consumer’s Surplus and Deadweight Loss”
-American Economic Review, 71:4, Sept. 1981, p. 668):
-The indirect utility function indexes the consumer's utility(happiness/pleasure/satisfaction)
-based on the real price of a good(P_G_R), real income(I_R), and the regression
-slopes and intercepts above for those variables. The higher(more positive) it is, the better off the consumer:
+After that, I can estimate the change in consumer utility from the tax using the indirect utility function from JA Hausman’s paper(”Exact Consumer’s Surplus and Deadweight Loss” American Economic Review, 71:4, Sept. 1981, p. 668): The indirect utility function indexes the consumer's utility(happiness/pleasure/satisfaction) based on the real price of a good(P_G_R), real income(I_R), and the regression slopes and intercepts above for those variables. The higher(more positive) it is, the better off the consumer:
 Indirect Utility =
 
 $$\mathbf{U(P_{GR}, I_R)} = e^{-\gamma P_{GR}} * (\mathbf{I_R} + (\frac{1}{\gamma}  (\beta P_{GR} + \frac{\beta}{\gamma} + \alpha)))$$
-
 
 where γ is the regression slope coefficient for I_R (0.01187), β is the regression
 slope coefficient for P_G_R (-14.1364), and α is the intercept (39.09754). Plugging in the 2005 values for P_G_R and I_R without the tax (for U_notax), and the 2005 values with the tax and no compensation (for U_taxuncomp), we get consumer utility with and without the tax:
@@ -208,7 +203,7 @@ If you've made it this far, I'm open to hearing your feedback to improve on this
 - An explanation of the standard errors and significance of the t values for the slopes/intercept in the explanation of the regression
 - Welfare analysis for the uncompensated tax
 - Consideration of other social costs avoided like congestion
-- More discussion of Limitations of the analysis, supply side effects, potential omitted variables in regression, problems of measuring utility, distributional effects, etc.
+- More discussion of Limitations of the analysis, i.e heterogeneous incomes and preferences, supply side effects, potential omitted variables in regression, problems of measuring utility, distributional effects, etc.
 - Extension of this analysis to current year
 - Extension of this analysis with different tax rates
 
