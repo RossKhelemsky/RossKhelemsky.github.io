@@ -110,10 +110,10 @@ $$\mathbf{G_{notax}} = 39.09754 - (14.1364 * 1.828) + (2455.67 * 0.01187) = 42.4
 
 The actual amount was 44.113, so the error is not very large for this estimate.
 
-To get the consumption amount with a $1 tax increase (and no rebate), I plug in the same I_R and 2.828 for P_G_R. Let's call this amount G_tax_uncomp.
+To get the consumption amount with a $1 tax increase (and no rebate), I plug in the same I_R and 2.828 for P_G_R. Let's call this amount G_taxuncomp.
 
-G tax uncomp = 39.09754 − (14.1364 ∗ 2.828) + (2455.67 ∗ 0.01187) = 28.2686
-gal/mo
+$$ \mathbf{G_{taxuncomp}} = 39.09754 − (14.1364 ∗ 2.828) + (2455.67 ∗ 0.01187) = 28.2686
+gal/mo $$
 
 
 After that, I can estimate the change in consumer utility from the tax using the indirect utility function from JA Hausman’s paper(”Exact Consumer’s Surplus and Deadweight Loss” American Economic Review, 71:4, Sept. 1981, p. 668): The indirect utility function indexes the consumer's utility(happiness/pleasure/satisfaction) based on the real price of a good(P_G_R), real income(I_R), and the regression slopes and intercepts above for those variables. The higher(more positive) it is, the better off the consumer:
