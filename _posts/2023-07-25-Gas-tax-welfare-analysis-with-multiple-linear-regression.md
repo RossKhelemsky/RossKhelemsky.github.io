@@ -111,6 +111,36 @@ The actual amount was 44.113, so the error is not very large for this estimate.
 
 To get the consumption amount with a $1 tax increase (and no rebate), I plug in the same I_R and 2.828 for P_G_R. Let's call this amount G_tax_uncomp.
 
+G tax uncomp = 39.09754 − (14.1364 ∗ 2.828) + (2455.67 ∗ 0.01187) = 28.2686
+gal/mo
+
+
+After that, I can estimate the change in consumer utility from the tax using the indirect utility function
+from JA Hausman’s paper(”Exact Consumer’s Surplus and Deadweight Loss”
+American Economic Review, 71:4, Sept. 1981, p. 668):
+The indirect utility function indexes the consumer's utility(happiness/pleasure/satisfaction)
+based on the real price of a good(P_G_R), real income(I_R), and the regression
+slopes and intercepts above for those variables. The higher(more positive) it is, the better off the consumer:
+
+
+$$Indirect Utility = \mathbf{U(P G R, I R)} = e^{−γ∗P G R} ∗ (I R + ( \frac{1}{γ} ∗ (β ∗ P G R + \frac{β}{γ} + α)))$$
+
+
+where γ is the regression slope coefficient for I_R (0.01187), β is the regression
+slope coefficient for P_G_R (-14.1364), and α is the intercept (39.09754). Plug-
+ging in the 2005 values for P_G_R and I R without the tax (for U_notax), and the
+2005 values with the tax and no compensation (for U_tax_uncomp), we get consumer utility with and without the tax:
+
+$$ \mathbf{U_{notax}} = \mathbf{U(1.828, 2455.67)} = e^{−0.01187∗1.828} ∗ (2455.67 + ( 1
+0.01187 ∗ (−14.1364 ∗ 1.828 + \frac{−14.1364}{0.01187} + 39.09754) = −94682.17$$
+
+U tax uncomp = U (2.828, 2455.67) = e−0.01187∗2.828∗(2455.67+( 1
+0.01187 ∗(−14.1364∗
+2.828 + −14.1364
+0.01187 + 39.09754) = −94716.56
+I can rearrange the terms of the indirect utility function to isolate I R and
+get the expenditure function, which gives the income required to achieve some
+level of utility, given a utility function and prices
 
 
 Appendix A: Python code for regression and interactive 3d plot
