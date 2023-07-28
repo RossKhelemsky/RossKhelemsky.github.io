@@ -131,7 +131,7 @@ slope coefficient for P_G_R (-14.1364), and α is the intercept (39.09754). Plug
 
 $$ \mathbf{U_{notax}} = \mathbf{U(1.828, 2455.67)} = e^{−0.01187∗1.828} ∗ (2455.67 + ( \frac{1}{0.01187} ∗ (−14.1364 ∗ 1.828 + \frac{−14.1364}{0.01187} + 39.09754))) = −94682.17$$
 
-$$ \mathbf{U_{taxuncomp} = \mathbf{U(2.828, 2455.67)} = e^{−0.01187∗2.828} ∗ (2455.67 + ( \frac{1}{0.01187} ∗(−14.1364∗2.828 + \frac{−14.1364}{0.01187} + 39.09754) = −94716.56$$
+$$ \mathbf{U_{taxuncomp}} = \mathbf{U(2.828, 2455.67)} = e^{−0.01187∗2.828} ∗ (2455.67 + ( \frac{1}{0.01187} ∗(−14.1364∗2.828 + \frac{−14.1364}{0.01187} + 39.09754) = −94716.56$$
 
 I can rearrange the terms of the indirect utility function to isolate I_R and
 get the expenditure function, which gives the income required to achieve some
