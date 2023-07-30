@@ -132,7 +132,7 @@ I can rearrange the terms of the indirect utility function to isolate I_R and
 get the expenditure function, which gives the income required to achieve some
 level of utility, given a utility function and prices:
 
-$$\mathbf{I_R}= \mathbf{Expend}(P_{GR}, U) = (e^{\gamma*P_{GR}}* U) -(\frac{1}{\gamma}*(\beta*P_{GR} + \frac{\beta}{\gamma})+\alpha)$$
+$$ \mathbf{I_R}= \mathbf{Expend}(P_{GR}, U) = (e^{\gamma*P_{GR}}* U) -(\frac{1}{\gamma}*(\beta*P_{GR} + \frac{\beta}{\gamma})+\alpha)$$
 
 
 Plugging in the pre-tax utility level(U_{notax}), the post-tax P_G_R, and the same β, γ, and α, I get that the required expenditure to be at the same utility level as before the tax is:
