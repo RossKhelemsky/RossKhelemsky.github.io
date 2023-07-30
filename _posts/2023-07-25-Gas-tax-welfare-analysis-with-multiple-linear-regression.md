@@ -139,6 +139,22 @@ Plugging in the pre-tax utility level(U_{notax}), the post-tax P_G_R, and the sa
 
 $$\mathbf{Expend(2.828, -94682.17)} = (e^{0.01187*2.828} * -94682.17) -(\frac{1}{0.01187} * (-14.1364 * 2.828 + \frac{-14.1364}{0.01187} + 39.09754)) = 2491.23$$
 
+This means that the required monthly compensation per capita is 2491.23 − 2455.67 = 35.36
+
+To get G(monthly gas consumption per capita) after the tax and compensa-
+tion, simply plug in 2.828 for P_G_R and 2491.23 for I_R back into the regression:
+
+$$G_{taxcomp} = 39.09754 − (14.1364 ∗ 2.828) + (2491.23 ∗ 01187) = 28.6907gal/mo$$
+
+Monthly tax revenue per capita without compensation is (tax amount per gallon * gallons consumed) = 1*28.2686 = 28.2686
+
+Monthly tax revenue per capita with compensation is (tax amount per gallon*gallons consumed)-rebate amount= (1 ∗ 28.6907) − 35.36 = −6.669
+
+Now we can use the EPA’s estimate for the amount(in metric tons) of carbon dioxide emitted per gallon of gasoline consumed(0.00889) to calculate the change in consumption emissions between no tax and tax with compensation:
+
+Consumption difference between no tax and compensated ta
+
+
 Appendix A: Python code for regression and interactive 3d plot
 
 
