@@ -128,11 +128,11 @@ $$ \mathbf{U_{notax}} = \mathbf{U(1.828, 2455.67)} = e^{−0.01187∗1.828} ∗ 
 
 $$ \mathbf{U_{taxuncomp}} = \mathbf{U(2.828, 2455.67)} = e^{−0.01187∗2.828} ∗ (2455.67 + ( \frac{1}{0.01187} ∗ (−14.1364 * 2.828 + \frac{−14.1364}{0.01187} + 39.09754))) = −94716.56$$
 
-I can rearrange the terms of the indirect utility function to isolate I_R and
+I can rearrange the terms of the indirect utility function(shown in appendix B) to isolate I_R and
 get the expenditure function, which gives the income required to achieve some
 level of utility, given a utility function and prices:
 
-$$ \mathbf{I_R} = \mathbf{Expend(P_{GR}, U)} = (e^{\gamma * P_{GR}}* U) -(\frac{1}{\gamma} * (\beta * P_{GR} + \frac{\beta}{\gamma}) + \alpha)$$
+$$ \mathbf{I_R} = \mathbf{Expend(P_{GR}, U)} = (e^{\gamma * P_{GR}}* U) -(\frac{1}{\gamma} * (\beta * P_{GR} + \frac{\beta}{\gamma} + \alpha))$$
 
 
 Plugging in the pre-tax utility level(U_{notax}), the post-tax P_G_R, and the same β, γ, and α, I get that the required expenditure to be at the same utility level as before the tax is:
@@ -203,7 +203,10 @@ fig = go.Figure(data=[scatter, plane], layout=layout)
 fig.write_html("3d_plot.html")
 {% endhighlight %}
 
-Appendix B: Considerations on improving this analysis
+Appendix B:
+
+
+Appendix C: Considerations on improving this analysis
 
 If you've made it this far, I'm open to hearing your feedback to improve on this analysis for future applications. Should I add any of the following?:
 - An explanation of the standard errors and significance of the t values for the slopes/intercept in the explanation of the regression
