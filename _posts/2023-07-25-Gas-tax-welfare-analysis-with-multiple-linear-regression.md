@@ -152,7 +152,15 @@ Monthly tax revenue per capita with compensation is (tax amount per gallon*gallo
 
 Now we can use the EPA’s estimate for the amount(in metric tons) of carbon dioxide emitted per gallon of gasoline consumed(0.00889) to calculate the change in consumption emissions between no tax and tax with compensation:
 
-Consumption difference between no tax and compensated ta
+Consumption difference between compensated tax and no tax= 28.6907 - 42.405 = -13.71 gal/mo
+
+Monthly carbon emissions reduction(MTCO2/mo) from tax with compensation
+= −13.71 ∗ 0.00889 = −0.121882
+
+From my understanding, this means that for the tax and compensation to be welfare increasing(in that society benefits, which is hopefully what the government wants):
+
+$$\frac{loss.tax.revenue}{carbon.emissions.reduction} < social.cost.carbon $$
+
 
 
 Appendix A: Python code for regression and interactive 3d plot
