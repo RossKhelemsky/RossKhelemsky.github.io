@@ -1,5 +1,5 @@
 ---
-title: R gastax project
+title: R gas tax project
 author: Ross Khelemsky
 mathjax: true
 date: June 2023
