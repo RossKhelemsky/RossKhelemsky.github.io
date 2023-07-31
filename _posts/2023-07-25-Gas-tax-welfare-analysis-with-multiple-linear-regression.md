@@ -128,9 +128,7 @@ $$ \mathbf{U_{notax}} = \mathbf{U(1.828, 2455.67)} = e^{−0.01187∗1.828} ∗ 
 
 $$ \mathbf{U_{taxuncomp}} = \mathbf{U(2.828, 2455.67)} = e^{−0.01187∗2.828} ∗ (2455.67 + ( \frac{1}{0.01187} ∗ (−14.1364 * 2.828 + \frac{−14.1364}{0.01187} + 39.09754))) = −94716.56$$
 
-I can rearrange the terms of the indirect utility function(shown in appendix B) to isolate I_R and
-get the expenditure function, which gives the income required to achieve some
-level of utility, given a utility function and prices:
+I can rearrange the terms of the indirect utility function(shown in appendix B) to isolate I_R and get the expenditure function, which gives the income required to achieve some level of utility, given a utility function and prices:
 
 $$ \mathbf{I_R} = \mathbf{Expend(P_{GR}, U)} = (e^{\gamma * P_{GR}}* U) -(\frac{1}{\gamma} * (\beta * P_{GR} + \frac{\beta}{\gamma} + \alpha))$$
 
@@ -157,11 +155,25 @@ Consumption difference between compensated tax and no tax= 28.6907 - 42.405 = -1
 Monthly carbon emissions reduction(MTCO2/mo) from tax with compensation
 = −13.71 ∗ 0.00889 = −0.121882
 
-From my understanding, this means that for the tax and compensation to be welfare increasing(in that society benefits, which is hopefully what the government wants):
+This means that for the tax and compensation to be welfare increasing(in that society benefits, which is hopefully what the government wants):
 
 $$\frac{loss.tax.revenue}{carbon.emissions.reduction} < social.cost.carbon $$
 
+This is the main welfare consideration since consumers are indifferent with com-
+pensation.
 
+The social cost of carbon is the net present value to society of future dam-
+ages caused by 1 additional ton of carbon being emitted(via climate change). It
+can also be reinterpreted as the benefit society would gain by emitting 1 metric
+ton less CO2.
+
+The main cost to consider is the loss of tax revenue by the government after imposing the tax.
+
+I can then get the formula that if welfare is positive, given consumers indifferent and government in deficit, then: loss tax revenue < (amount reduction CO2 emissions in metric tons)∗ (reduction in cost to society of 1 fewer metric ton CO2 being emitted)
+
+Therefore for the tax and compensation to be welfare enhancing, the social cost of carbon must be at or above:
+
+$$
 
 Appendix A: Python code for regression and interactive 3d plot
 
