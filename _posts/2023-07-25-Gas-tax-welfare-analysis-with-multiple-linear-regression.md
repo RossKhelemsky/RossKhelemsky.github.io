@@ -44,7 +44,7 @@ I then retrieve summary statistics for the transformed data:
 
 Then I run OLS multiple linear regression, where monthly gas consumption (G) is dependent on the real price of gas (P_G_R) and real monthly income (I_R). This fits a plane to the data which minimizes the sum of squared residual errors between the observed and predicted values of $\mathbf{G}$, of the functional form: 
 
-$$\mathbf{G}=\gamma \mathbf{I_R} + \beta \mathbf{P_{GR}} + \alpha$$
+$$\mathbf{G}=\beta_1 \mathbf{I_R} + \beta_2 \mathbf{P_{GR}} + \beta_0$$
 
 
 {% highlight r %} 
@@ -52,16 +52,16 @@ fit <- lm(G ~ P_G_R + I_R, data = gastaxdata)
 summary(fit)
 {% endhighlight %}
 
-γ, the slope estimate for I_R, is 0.01187. This means that
+β1, the slope estimate for I_R, is 0.01187. This means that
 for a 1$ rise in real monthly income (with the real price of gas held constant),
 monthly gas consumption is expected to increase by 0.01187 gal/mo.
 
-β, the slope estimate for P_G_R, is −14.1364. This means
+β2, the slope estimate for P_G_R, is −14.1364. This means
 that for a 1$ rise in the real price of gas (with real monthly income held con-
 stant), monthly gas consumption is expected to decrease by 14.136 gal/mo.
 
 
-α, the intercept estimate, is 39.09754. This means that if real incomes and
+β0, the intercept estimate, is 39.09754. This means that if real incomes and
 the real price of gas were 0$, per capita monthly gas consumption would be
 39.09754 gal/mo. While it may not have a real-world interpretation(since the
 real price of gas isn't going to ever be 0), it is still necessary
@@ -119,10 +119,9 @@ gal/mo $$
 After that, I can estimate the change in consumer utility from the tax using the indirect utility function from JA Hausman’s paper(”Exact Consumer’s Surplus and Deadweight Loss” American Economic Review, 71:4, Sept. 1981, p. 668): The indirect utility function indexes the consumer's utility(happiness/pleasure/satisfaction) based on the real price of a good(P_G_R), real income(I_R), and the regression slopes and intercepts above for those variables. The higher(more positive) it is, the better off the consumer:
 Indirect Utility =
 
-$$\mathbf{U(P_{GR}, I_R)} = e^{-\gamma P_{GR}} * (\mathbf{I_R} + (\frac{1}{\gamma}  (\beta P_{GR} + \frac{\beta}{\gamma} + \alpha)))$$
+$$\mathbf{U(P_{GR}, I_R)} = e^{-\beta_1 P_{GR}} * (\mathbf{I_R} + (\frac{1}{\beta_1}  (\beta_2 P_{GR} + \frac{\beta_2}{\beta_1} + \beta_0)))$$
 
-where γ is the regression slope coefficient for I_R (0.01187), β is the regression
-slope coefficient for P_G_R (-14.1364), and α is the intercept (39.09754). Plugging in the 2005 values for P_G_R and I_R without the tax (for U_notax), and the 2005 values with the tax and no compensation (for U_taxuncomp), we get consumer utility with and without the tax:
+where β1 is the regression slope coefficient for I_R (0.01187), β2 is the regression slope coefficient for P_G_R (-14.1364), and β0 is the intercept (39.09754). Plugging in the 2005 values for P_G_R and I_R without the tax (for U_notax), and the 2005 values with the tax and no compensation (for U_taxuncomp), we get consumer utility with and without the tax:
 
 $$ \mathbf{U_{notax}} = \mathbf{U(1.828, 2455.67)} = e^{−0.01187∗1.828} ∗ (2455.67 + ( \frac{1}{0.01187} ∗ (−14.1364 ∗ 1.828 + \frac{−14.1364}{0.01187} + 39.09754))) = −94682.17$$
 
@@ -130,10 +129,10 @@ $$ \mathbf{U_{taxuncomp}} = \mathbf{U(2.828, 2455.67)} = e^{−0.01187∗2.828} 
 
 I can rearrange the terms of the indirect utility function(shown in appendix B) to isolate I_R and get the expenditure function, which gives the income required to achieve some level of utility, given a utility function and prices:
 
-$$ \mathbf{I_R} = \mathbf{Expend(P_{GR}, U)} = (e^{\gamma * P_{GR}}* U) -(\frac{1}{\gamma} * (\beta * P_{GR} + \frac{\beta}{\gamma} + \alpha))$$
+$$ \mathbf{I_R} = \mathbf{Expend(P_{GR}, U)} = (e^{\beta_1 * P_{GR}}* U) -(\frac{1}{\beta_1} * (\beta_2 * P_{GR} + \frac{\beta_2}{\beta_1} + \beta_0))$$
 
 
-Plugging in the pre-tax utility level(U_{notax}), the post-tax P_G_R, and the same β, γ, and α, I get that the required expenditure to be at the same utility level as before the tax is:
+Plugging in the pre-tax utility level(U_{notax}), the post-tax P_G_R, and the same β2, β1, and β0, I get that the required expenditure to be at the same utility level as before the tax is:
 
 $$\mathbf{Expend(2.828, -94682.17)} = (e^{0.01187*2.828} * -94682.17) -(\frac{1}{0.01187} * (-14.1364 * 2.828 + \frac{-14.1364}{0.01187} + 39.09754)) = 2491.23$$
 
