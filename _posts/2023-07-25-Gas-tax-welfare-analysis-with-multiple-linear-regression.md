@@ -100,7 +100,7 @@ p3 + ggtitle("Estimated demand curve with I_R held constant at its 2005 value (2
 
 (Insert figure 5 here)
 
-Also, we can rerun this regression in python and use plotly create an interactive 3d plot of the plane fit to the data. Code is shown in Appendix A.
+Also, we can rerun this regression in python and use plotly create an interactive 3d plot of the plane fit to the data. Code is shown in Appendix B.
 
 [View 3D Plot](/3d_plot.html)
 
@@ -174,7 +174,20 @@ Therefore for the tax and compensation to be welfare enhancing, the social cost 
 
 $$
 
-Appendix A: Python code for regression and interactive 3d plot
+
+
+
+Appendix A:Deriving the OLS estimators analytically
+
+I am trying to fit a linear model to the data. This means that I'm trying to predict a given level of G for a given level of P\_G\_R and I\_R. \\
+
+This is done by formulating the relationship between a 22x1 vector of observations of the dependent variable $\vec{y}$ (monthly gas consumption for the 22 time periods measured in the dataset from 1984-2005) as a multiplication of a 22x3 matrix $\mathbf{X}$ (with the first column being all 1s to represent the constant term, and the second 2 columns filled with observations of the independent variables, P\_G\_R and I\_R) multiplied by a 3x1 vector of OLS estimators $\vec{\beta}$ and added to a 22x1 vector of errors for each prediction. 
+
+This is of the form:
+
+$$\vec{y} = \mathbf{X}\Vec{\beta} + \Vec{\epsilon}$$
+
+Appendix B: Python code for regression and interactive 3d plot
 
 
 {% highlight py %} 
