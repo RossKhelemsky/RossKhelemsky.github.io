@@ -275,7 +275,7 @@ $$\begin{pmatrix}
 the point of this appendix is to derive this vector analytically, knowing only the observations.\\
 \\So, assuming I don't already know $\Vec{\beta}$, to get the best fit plane and derive the estimator vector, I minimize the sum of squared errors, S. Remembering that $\vec{\epsilon}$ is a 22x1 vector of the errors for any given fit, the objective function is thus:
 
-$$ S = \vec{\epsilon}^{T} \vec{\epsilon} $$
+$$ S = (\vec{\epsilon})^{T} \vec{\epsilon} $$
 
 $$=(\vec{y} - \mathbf{X}\vec{\beta})^{T} (\vec{y} - \mathbf{X}\vec{\beta})$$
 
