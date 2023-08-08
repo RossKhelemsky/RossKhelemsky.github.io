@@ -23,8 +23,8 @@ SAS_data is the dataset I am going to use for this analysis. Since it is in SAS 
 
 Summary(gastaxdata) displays summary statistics for the variables in the dataset (minimum, 1st quartile, median mean, 3rd quartile, and maximum). The summary statistics for gastaxdata are displayed in the figure below:
 
-![Summary statistics for all variables](https://github.com/niklasbuschmann/contrast/assets/137047194/d6786909-5432-4782-8dad-442976657ee9)
-![Summary statistics for all variables](https://github.com/niklasbuschmann/contrast/assets/137047194/b748c230-0f9a-44c0-9fbe-5df94c985e36)
+
+![Summary statistics for all variables](https://github.com/niklasbuschmann/contrast/assets/137047194/cb3db72d-5d57-454e-a981-789ee3666439)
 
 Next I convert annual per capita gasoline consumption and nominal income
 to monthly. Then I convert nominal monthly income and the nominal price of
@@ -43,7 +43,7 @@ summary(gastaxdata[c("G", "P_G_R", "I_R")])
 I then retrieve summary statistics for the transformed data:
 
 (Insert figure 2 here)
-![Summary statistics for transformed variables](
+![Summary statistics for transformed variables](https://github.com/niklasbuschmann/contrast/assets/137047194/2b0d0751-85c8-49c3-9f5e-3058378cba99)
 
 Then I run OLS multiple linear regression, where monthly gas consumption (G) is dependent on the real price of gas (P_G_R) and real monthly income (I_R). This fits a plane to the data which minimizes the sum of squared residual errors between the observed and predicted values of $\mathbf{G}$, of the functional form: 
 
