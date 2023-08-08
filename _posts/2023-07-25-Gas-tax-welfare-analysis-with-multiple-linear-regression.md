@@ -285,6 +285,21 @@ $$=((\vec{y})^{T} - (\vec{\beta})^{T} \mathbf{X}^{T}) (\vec{y} - \mathbf{X}\vec{
 
 $$=(\vec{y})^{T} \vec{y} - (\vec{y})^{T}\mathbf{X}\vec{\beta} - (\vec{\beta})^{T} \mathbf{X}^{T}\vec{y} + (\vec{\beta})^{T} \mathbf{X}^{T} \mathbf{X}\vec{\beta}  $$
 
+ Before I minimize this sum, I need to establish some matrix calculus definitions:
+ 
+ For an nx1 vector of variables x, and an nxm matrix \textbf{A} with entries that do not depend on x,
+\\if:
+
+$$\mathbf{A}\vec{x} = \vec{y} , then \frac{\partial \vec{y}}{\partial \vec{x}} = \mathbf{A}^{T}$$
+
+if:
+ 
+ $$\vec{x}^{T}\mathbf{A} = \vec{y} , then \frac{\partial \vec{y}}{\partial \vec{x}} = \mathbf{A}$$
+ 
+if \textbf{A} is symmetric, which the matrix we will be working with is (as shown below), and:
+
+$$\vec{x}^{T}\mathbf{A} \vec{x} = \vec{y} , then \frac{\partial \vec{y}}{\partial \vec{x}} = 2\mathbf{A}\vec{x}$$
+
 Appendix B: Python code for regression and interactive 3d plot
 
 
