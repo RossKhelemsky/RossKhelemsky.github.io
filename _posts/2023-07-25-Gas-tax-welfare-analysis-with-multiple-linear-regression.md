@@ -120,7 +120,7 @@ p3 + ggtitle("Estimated demand curve with I_R held constant at its 2005 value (2
 
 ![regression I_R held constant at 2005 value](https://github.com/niklasbuschmann/contrast/assets/137047194/4fcb6c3c-2287-4f64-a918-e1fcfd4371b2)
 
-Also, we can rerun this regression in python and use plotly create an interactive 3d plot of the plane fit to the data, which I have linked to and attached a picture of below: 
+Also, we can rerun this regression in python and use plotly to create an interactive 3d plot of the plane fit to the data, which I have linked to and attached a picture of below: 
 
 [Interact with the 3D plot shown below!](/3d_plot.html)
 
@@ -202,9 +202,9 @@ $$
 
 Appendix A: Deriving the OLS estimators analytically
 
-I am trying to fit a linear model to the data. This means that I'm trying to predict a given level of G for a given level of P\_G\_R and I\_R. \\
+I am trying to fit a linear model to the data. This means that I'm trying to predict a given level of G for a given level of P_G_R and I_R. \\
 
-This is done by formulating the relationship between a 22x1 vector of observations of the dependent variable $\vec{y}$ (monthly gas consumption for the 22 time periods measured in the dataset from 1984-2005) as a multiplication of a 22x3 matrix $\mathbf{X}$ (with the first column being all 1s to represent the constant term, and the second 2 columns filled with observations of the independent variables, P\_G\_R and I\_R) multiplied by a 3x1 vector of OLS estimators $\vec{\beta}$ and added to a 22x1 vector of errors for each prediction. 
+This is done by formulating the relationship between a 22x1 vector of observations of the dependent variable y (monthly gas consumption for the 22 time periods measured in the dataset from 1984-2005) as a multiplication of a 22x3 matrix \textbf{X} (with the first column being all 1s to represent the constant term, and the second 2 columns filled with observations of the independent variables, P_G_R and I_R) multiplied by a 3x1 vector of OLS estimators β and added to a 22x1 vector of errors for each prediction. 
 
 This is of the form:
 
@@ -260,6 +260,27 @@ $$ \vec{y} =\begin{pmatrix}
     1 , 2455.67 , 1.83
 \end{pmatrix}$$
 
+and while I know the squared-error minimizing β to be 
+
+$$\begin{pmatrix}
+    \beta_0\\
+    \beta_1\\
+    \beta_2
+\end{pmatrix}$ = $\begin{pmatrix}
+    39.09754\\
+    0.01187\\
+    -14.1364
+\end{pmatrix}$$
+
+the point of this appendix is to derive this vector analytically, knowing only the observations.\\
+\\So, assuming I don't already know $\Vec{\beta}$, to get the best fit plane and derive the estimator vector, I minimize the sum of squared errors, S. Remembering that $\vec{\epsilon}$ is a 22x1 vector of the errors for any given fit, the objective function is thus:
+$$S = (\vec{\epsilon})^{T} \vec{\epsilon} $$S
+
+$$=(\vec{y} - \mathbf{X}\vec{\beta})^{T} (\vec{y} - \mathbf{X}\vec{\beta})$$
+
+$$=((\vec{y})^{T} - (\vec{\beta})^{T} \mathbf{X}^{T}) (\vec{y} - \mathbf{X}\vec{\beta})$$
+
+$$=(\vec{y})^{T} \vec{y} - (\vec{y})^{T}\mathbf{X}\vec{\beta} - (\vec{\beta})^{T} \mathbf{X}^{T}\vec{y} + (\vec{\beta})^{T} \mathbf{X}^{T} \mathbf{X}\vec{\beta}  $$
 
 Appendix B: Python code for regression and interactive 3d plot
 
@@ -328,7 +349,7 @@ fig.write_html("3d_plot.html")
 Appendix C:
 
 
-Appendix C: Considerations on improving this analysis
+Appendix D: Considerations on improving this analysis
 
 If you've made it this far, I'm open to hearing your feedback to improve on this analysis for future applications. Should I add any of the following?:
 - An explanation of the standard errors and significance of the t values for the slopes/intercept in the explanation of the regression
