@@ -505,9 +505,12 @@ I'm going to isolate I\_R in the formula for indirect utility(consumer satisfact
 
 $$U= e^{-\beta_1* P\_G\_R} * (I\_R+ (\frac{1}{\beta_1}* (\beta_2*P\_G\_R+\frac{\beta_2}{\beta_1}+\beta_0)))$$
 
+
 $$ U= e^{-\beta_1 * P\_G\_R} * (I\_R + (\frac{1}{\beta_1}* (\beta_2*P\_G\_R+\frac{\beta_2}{\beta_1}+\beta_0))) $$
 
+
 $$ U* e^{\beta_1 * P\_G\_R}} = I\_R + (\frac{1}{\beta_1}* (\beta_2*P\_G\_R+\frac{\beta_2}{\beta_1}+\beta_0)) $$
+
 
 $$ \mathbf{Expend(P\_G\_R}, U)} = \mathbf{I_R} =  (U * e^{\beta_1 * P_{GR}}) -(\frac{1}{\beta_1} * (\beta_2 * P_{GR} + \frac{\beta_2}{\beta_1} + \beta_0))$$
 
