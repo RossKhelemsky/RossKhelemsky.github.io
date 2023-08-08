@@ -77,11 +77,11 @@ $$\vec{\beta}= \begin{matrix}
     \beta_0\\
     \beta_1\\
     \beta_2
-\end{matrix} = \begin{matrix}
+\end{matrix} = (\begin{matrix}
     39.09754\\
     0.01187\\
     -14.1364
-\end{matrix}$$ 
+\end{matrix})$$ 
 
 can also be derived analytically, using some matrix algebra and calculus, as shown in Appendix A.
 
