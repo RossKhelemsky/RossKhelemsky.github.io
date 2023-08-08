@@ -23,7 +23,7 @@ SAS_data is the dataset I am going to use for this analysis. Since it is in SAS 
 
 Summary(gastaxdata) displays summary statistics for the variables in the dataset (minimum, 1st quartile, median mean, 3rd quartile, and maximum). The summary statistics for gastaxdata are displayed in the figure below:
 
-![Summary](images/summarygastaxdata.jpg)
+![Summary]([images/summarygastaxdata.jpg](https://github.com/niklasbuschmann/contrast/assets/137047194/d6786909-5432-4782-8dad-442976657ee9))
 ![Swiss Alps](https://user-images.githubusercontent.com/4943215/55412536-edbba180-5567-11e9-9c70-6d33bca3f8ed.jpg)
 
 Next I convert annual per capita gasoline consumption and nominal income
