@@ -200,7 +200,7 @@ $$
 
 
 
-Appendix A:Deriving the OLS estimators analytically
+Appendix A: Deriving the OLS estimators analytically
 
 I am trying to fit a linear model to the data. This means that I'm trying to predict a given level of G for a given level of P\_G\_R and I\_R. \\
 
@@ -209,6 +209,57 @@ This is done by formulating the relationship between a 22x1 vector of observatio
 This is of the form:
 
 $$\vec{y} = \mathbf{X} \vec{\beta} + \vec{\epsilon}$$
+
+Where 
+
+$$ \Vec{y} =\begin{pmatrix}
+    36.41\\
+    36.95\\
+    43.54\\
+    43.29\\
+    41.56\\
+    43.25\\
+    41.20\\
+    43.97\\
+    46.32\\
+    48.51\\
+    50.42\\
+    49.37\\
+    47.79\\
+    49.38\\
+    55.96\\
+    53.99\\
+    47.52\\
+    49.03\\
+    50.43\\
+    48.58\\
+    45.90\\
+    44.11
+\end{pmatrix} \mathbf{X} = \begin{pmatrix}
+    1 , 1681.08 , 1.75\\
+    1 , 1742.29 , 1.68\\
+    1 , 1771.71 , 1.12\\
+    1 , 1803.62 , 1.15\\
+    1 , 1852.83 , 1.17\\
+    1 , 1880.23 , 1.19\\
+    1 , 1886.81 , 1.32\\
+    1 , 1847.62 , 1.14\\
+    1 , 1877.33 , 1.08\\
+    1 , 1899.13 , 1.00\\
+    1 , 1934.56 , 0.94\\
+    1 , 1947.46 , 0.95\\
+    1 , 1978.68 , 1.03\\
+    1 , 2013.85 , 0.99\\
+    1 , 2062.86 , 0.77\\
+    1 , 2135.40 , 0.87\\
+    1 , 2212.29 , 1.21\\
+    1 , 2230.91 , 1.11\\
+    1 , 2249.71 , 1.00\\
+    1 , 2301.05 , 1.18\\
+    1 , 2380.18 , 1.45\\
+    1 , 2455.67 , 1.83
+\end{pmatrix}$$
+
 
 Appendix B: Python code for regression and interactive 3d plot
 
@@ -274,7 +325,7 @@ fig = go.Figure(data=[scatter, plane], layout=layout)
 fig.write_html("3d_plot.html")
 {% endhighlight %}
 
-Appendix B:
+Appendix C:
 
 
 Appendix C: Considerations on improving this analysis
