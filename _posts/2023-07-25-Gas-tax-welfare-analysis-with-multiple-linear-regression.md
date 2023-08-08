@@ -45,10 +45,11 @@ I then retrieve summary statistics for the transformed data:
 (Insert figure 2 here)
 ![Summary statistics for transformed variables](https://github.com/niklasbuschmann/contrast/assets/137047194/2b0d0751-85c8-49c3-9f5e-3058378cba99)
 
-Then I run OLS multiple linear regression, where monthly gas consumption (G) is dependent on the real price of gas (P_G_R) and real monthly income (I_R). This fits a plane to the data which minimizes the sum of squared residual errors between the observed and predicted values of $\mathbf{G}$, of the functional form: 
+Then I run OLS multiple linear regression, where monthly gas consumption (G) is dependent on the real price of gas (P_G_R) and real monthly income (I_R). This fits a plane to the data which minimizes the sum of squared residual errors between the observed and predicted values of G, of the form: 
 
 $$\mathbf{G}=\beta_1 \mathbf{I_R} + \beta_2 \mathbf{P_{GR}} + \beta_0$$
 
+![Summary statistics of OLS multiple linear regression](https://github.com/niklasbuschmann/contrast/assets/137047194/115cb969-73ef-481c-a50d-aac086141493)
 
 {% highlight r %} 
 fit <- lm(G ~ P_G_R + I_R, data = gastaxdata)
