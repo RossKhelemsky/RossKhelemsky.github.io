@@ -73,11 +73,11 @@ to compute to find the best fit line(or plane, in this instance).
 
 This vector of residuals, 
 
-$$\vec{\beta}= \begin{matrix}
+$$\vec{\beta}= (\begin{matrix}
     \beta_0\\
     \beta_1\\
     \beta_2
-\end{matrix} = (\begin{matrix}
+\end{matrix}) = (\begin{matrix}
     39.09754\\
     0.01187\\
     -14.1364
