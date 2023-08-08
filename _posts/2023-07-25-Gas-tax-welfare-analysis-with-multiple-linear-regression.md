@@ -73,15 +73,15 @@ to compute to find the best fit line(or plane, in this instance).
 
 This vector of residuals, 
 
-$$\vec{\beta}= (\begin{matrix}
+$$\vec{\beta}= \begin{pmatrix}
     \beta_0\\
     \beta_1\\
     \beta_2
-\end{matrix}) = (\begin{matrix}
+\end{pmatrix} = \begin{pmatrix}
     39.09754\\
     0.01187\\
     -14.1364
-\end{matrix})$$ 
+\end{pmatrix}$$ 
 
 can also be derived analytically, using some matrix algebra and calculus, as shown in Appendix A.
 
@@ -212,7 +212,7 @@ $$\vec{y} = \mathbf{X} \vec{\beta} + \vec{\epsilon}$$
 
 Where 
 
-$$ \Vec{y} =\begin{pmatrix}
+$$ \vec{y} =\begin{pmatrix}
     36.41\\
     36.95\\
     43.54\\
