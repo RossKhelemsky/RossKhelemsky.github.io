@@ -139,7 +139,7 @@ $$ \mathbf{G_{taxuncomp}} = 39.09754 − (14.1364 ∗ 2.828) + (2455.67 ∗ 0.01
 gal/mo $$
 
 
-After that, I can estimate the change in consumer utility from the tax using the indirect utility function from JA Hausman’s paper(”Exact Consumer’s Surplus and Deadweight Loss” American Economic Review, 71:4, Sept. 1981, p. 668): The indirect utility function indexes the consumer's utility(happiness/pleasure/satisfaction) based on the real price of a good(P_G_R), real income(I_R), and the regression slopes and intercepts above for those variables. The higher(more positive) it is, the better off the consumer:
+After that, I can estimate the change in consumer utility from the tax using the indirect utility function from JA Hausman’s 1981 paper(”Exact Consumer’s Surplus and Deadweight Loss”): The indirect utility function indexes the consumer's utility(happiness/pleasure/satisfaction) based on the real price of a good(P_G_R), real income(I_R), and the regression slopes and intercepts above for those variables. The higher(more positive) it is, the better off the consumer:
 Indirect Utility =
 
 $$\mathbf{U(P_{GR}, I_R)} = e^{-\beta_1 P_{GR}} * (\mathbf{I_R} + (\frac{1}{\beta_1}  (\beta_2 P_{GR} + \frac{\beta_2}{\beta_1} + \beta_0)))$$
@@ -195,9 +195,9 @@ I can then get the formula that if welfare is positive, given consumers indiffer
 
 Therefore for the tax and compensation to be welfare enhancing, the social cost of carbon must be above:
 
-$$Social.cost.carbon \geq \frac{-6.669}{-0.121882} = \$54.71/MTCO2$$
+$$Social.cost.carbon > \frac{-6.669}{-0.121882} = \$54.71/MTCO2$$
 
-which is actually not very far off from recent estimates of SCCO2: Wang et al 2019 conducted a meta-analysis on estimates of the social cost of carbon and found a mean estimate of \$54.70 per ton of CO2 emitted(Pei Wang, Xiangzheng Deng, Huimin Zhou, Shangkun Yu, Estimates of the social cost of carbon: A review based on meta-analysis,Journal of Cleaner Production) (Though I'm not sure if this is in real dollars or 2019 dollars. The 2005 tax \$54.71 threshold is in real dollars.)\\
+which is actually not very far off from recent estimates of SCCO2: Wang et al 2019 conducted a meta-analysis on estimates of the social cost of carbon and found a mean estimate of \$54.70 per ton of CO2 emitted(Though I'm not sure if this is in real dollars or 2019 dollars. The 2005 tax \$54.71 threshold is in real dollars). (Wang et al 2019)\\
 
 
 Appendix A: Deriving the OLS estimators analytically
@@ -523,6 +523,28 @@ If you've made it this far, I'm open to hearing your feedback to improve on this
 
 Or would that be too much clutter? This already feels like a lot for an undergrad writing sample, but also many (most?)competitive applicants already have multiple coauthored papers/Phd level econ coursework/A's in real analysis and topology by my age so I think it needs to be extensive lol
 
+References:
+
+Hausman 1981->
+Hausman, J. A. (1981). Exact Consumer’s Surplus and Deadweight Loss. The American Economic Review, 71(4), 662–676. Retrieved from
+
+\url{http://www.jstor.org/stable/1806188}
+
+\url{http://www.econ.uiuc.edu/~econ536/Papers/hausman81.pdf}
+
+
+EPA->
+Environmental Protection Agency. (2023). Greenhouse Gases Equivalencies Calculator - Calculations and References. EPA. Retrieved from
+
+\url{https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references}
+
+
+Wang et al 2019 ->
+Wang, P., Deng, X., Zhou, H., \& Yu, S. (2019). Estimates of the Social Cost of carbon: A review based on meta-analysis. Journal of Cleaner Production, 209, 1494–1507. Retrieved from
+
+\url{https://doi.org/10.1016/j.jclepro.2018.11.058}
+
+\url{https://www.sciencedirect.com/science/article/pii/S0959652618334589?casa_token=r_RXW-1Yus4AAAAA:aIC8-lXSao5_RcTnmEkhNopUC-3c5BBWoDBY7pEdNdBpv7ReI5fOL_jwuaXZ3VRkYHcwe4OK7uc}
 
 
 
