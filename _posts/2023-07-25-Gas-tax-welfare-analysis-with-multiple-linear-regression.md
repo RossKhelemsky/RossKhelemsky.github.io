@@ -72,7 +72,25 @@ to compute to find the best fit line(or plane, in this instance).
 The adjusted $R^2$ of 0.8979 implies that 89.79% of the variation in gas con-
 sumption can be explained by changes in the real price of gas and real income.
 
-Now I use gglot to plot demand curves for gas (monthly consumption in gal/mo as a function of real price) at different levels of real monthly income held constant:
+This vector of residuals, 
+
+$$\vec{\beta}= \begin{matrix}
+    \beta_0\\
+    \beta_1\\
+    \beta_2
+\end{matrix} = \begin{matrix}
+    39.09754\\
+    0.01187\\
+    -14.1364
+\end{matrix}$$ 
+
+can also be derived analytically, using some matrix algebra and calculus, as shown in Appendix A.
+
+
+The adjusted $R^2$ of 0.8979 implies that 89.79\% of the variation in gas consumption can be explained by changes in the real price of gas and real income.
+
+
+Now I use gglot to plot demand curves for gas (monthly gas consumption in gal/mo as a function of real price) at different levels of real monthly income held constant:
 
 {% highlight r %} 
 library(ggplot2)
@@ -101,13 +119,14 @@ p3 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
 p3 + ggtitle("Estimated demand curve with I_R held constant at its 2005 value (2455.67)")
 {% endhighlight %}
 
-(Insert figure 6 here)
+![regression I_R held constant at 2005 value](https://github.com/niklasbuschmann/contrast/assets/137047194/4fcb6c3c-2287-4f64-a918-e1fcfd4371b2)
 
-Also, we can rerun this regression in python and use plotly create an interactive 3d plot of the plane fit to the data. Code is shown in Appendix B.
+Also, we can rerun this regression in python and use plotly create an interactive 3d plot of the plane fit to the data, which I have linked to and attached a picture of below: 
 
 [Interact with the 3D plot shown below!](/3d_plot.html)
 
 ![Interactive 3D plot](https://github.com/niklasbuschmann/contrast/assets/137047194/d6736bba-b56f-4c2a-9d6c-7438f5edb5c7)
+Code is shown in Appendix B.
 
 Now that I have the regression model, I can plug in the 2005 values for I_R and P_G_R (2455.67 and 1.828, respectively) to estimate the pre-tax consumption amount. Let's call this G_notax.
 
