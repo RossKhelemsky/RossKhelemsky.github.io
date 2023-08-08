@@ -288,7 +288,7 @@ $$=(\vec{y})^{T} \vec{y} - (\vec{y})^{T}\mathbf{X}\vec{\beta} - (\vec{\beta})^{T
  Before I minimize this sum, I need to establish some matrix calculus definitions:
  
  For an nx1 vector of variables x, and an nxm matrix \textbf{A} with entries that do not depend on x,
-\\if:
+if:
 
 $$\mathbf{A}\vec{x} = \vec{y} , then \frac{\partial \vec{y}}{\partial \vec{x}} = \mathbf{A}^{T}$$
 
