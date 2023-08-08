@@ -501,13 +501,13 @@ fig.write_html("3d_plot.html")
 
 Appendix C:
 
-I'm going to isolate I\_R in the formula for indirect utility(consumer satisfaction as a function of real income and the real price of gas) to get the expenditure function(the amount of income needed to reach a certain level of utility, given a utility function and prices):\\
+I'm going to isolate I\_R in the formula for indirect utility(consumer satisfaction as a function of real income and the real price of gas) to get the expenditure function(the amount of income needed to reach a certain level of utility, given a utility function and prices):
 
-$$U= e^{-\beta_1*P\_G\_R} * (I\_R+(\frac{1}{\beta_1}*(\beta_2*P\_G\_R+\frac{\beta_2}{\beta_1}+\beta_0)))$$
+$$ U= e^{-\beta_1*P\_G\_R} * (I\_R+(\frac{1}{\beta_1}*(\beta_2*P\_G\_R+\frac{\beta_2}{\beta_1}+\beta_0)))$$
 
-$$U*e^{\beta_1*P\_G\_R} = I\_R+(\frac{1}{\beta_1}*(\beta_2*P\_G\_R+\frac{\beta_2}{\beta_1}+\beta_0))$$
+$$ U*e^{\beta_1*P\_G\_R} = I\_R+(\frac{1}{\beta_1}*(\beta_2*P\_G\_R+\frac{\beta_2}{\beta_1}+\beta_0))$$
 
-$$Expend(P\_G\_R,U) = I\_R = U*e^{\beta_1*P\_G\_R} - (\frac{1}{\beta_1}*(\beta_2*P\_G\_R+\frac{\beta_2}{\beta_1}+\beta_0))$$
+$$ Expend(P\_G\_R,U) = I\_R = U*e^{\beta_1*P\_G\_R} - (\frac{1}{\beta_1}*(\beta_2*P\_G\_R+\frac{\beta_2}{\beta_1}+\beta_0))$$
 
 Appendix D: Considerations on improving this analysis
 
