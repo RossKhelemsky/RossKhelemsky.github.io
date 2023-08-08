@@ -84,7 +84,7 @@ p1 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
 p1 + ggtitle("Estimated demand curve with I_R held constant at its mean value (2006.60)")
 {% endhighlight %}
 
-(Insert figure 3 here)
+(Insert figure 4 here)
 
 {% highlight r %} 
 p2 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
@@ -93,7 +93,7 @@ p2 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
 p2 + ggtitle("Estimated demand curve with I_R held constant at its median value (1941.01)")
 {% endhighlight %}
 
-(Insert figure 4 here)
+(Insert figure 5 here)
 
 {% highlight r %} 
 p3 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() + 
@@ -102,7 +102,7 @@ p3 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
 p3 + ggtitle("Estimated demand curve with I_R held constant at its 2005 value (2455.67)")
 {% endhighlight %}
 
-(Insert figure 5 here)
+(Insert figure 6 here)
 
 Also, we can rerun this regression in python and use plotly create an interactive 3d plot of the plane fit to the data. Code is shown in Appendix B.
 
