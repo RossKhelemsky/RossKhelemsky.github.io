@@ -300,6 +300,16 @@ if \textbf{A} is symmetric, which the matrix we will be working with is (as show
 
 $$\vec{x}^{T}\mathbf{A} \vec{x} = \vec{y} \to \frac{\partial \vec{y}}{\partial \vec{x}} = 2\mathbf{A}\vec{x}$$
 
+To minimize the sum, I set the partial derivative of S with respect to β equal to zero.
+
+$$\frac{\partial S}{\partial \vec{\beta}} = 0 - ((\vec{y})^{T}\mathbf{X})^{T} - \mathbf{X}^{T}\vec{y} + 2 \mathbf{X}^{T}\mathbf{X} \vec{\beta} = 0$$
+
+$$-2\mathbf{X}^{T}\vec{y} + 2 \mathbf{X}^{T}\mathbf{X} \vec{\beta}=0$$
+
+$$ \mathbf{X}^{T} \mathbf{X} \vec{\beta} = \mathbf{X}^{T}\vec{y}$$
+
+$$\vec{\beta} = (\mathbf{X}^{T}\mathbf{X})^{-1} \mathbf{X}^{T}\vec{y} $$
+
 Appendix B: Python code for regression and interactive 3d plot
 
 
