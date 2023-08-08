@@ -209,7 +209,7 @@ This is done by formulating the relationship between a 22x1 vector of observatio
 
 This is of the form:
 
-$$\vec{y} = \mathbf{X}\Vec{\beta} + \Vec{\epsilon}$$
+$$\vec{y} = \mathbf{X} \vec{\beta} + \vec{\epsilon}$$
 
 Appendix B: Python code for regression and interactive 3d plot
 
