@@ -221,7 +221,7 @@ which is actually not very far off from recent estimates of SCCO2: Wang et al 20
 
 I am trying to fit a linear model to the data. This means that I'm trying to predict a given level of G for a given level of P_G_R and I_R. 
 
-This is done by formulating the relationship between a 22x1 vector of observations of the dependent variable y (monthly gas consumption for the 22 time periods measured in the dataset from 1984-2005) as a multiplication of a 22x3 matrix ### X (with the first column being all 1s to represent the constant term, and the second 2 columns filled with observations of the independent variables, P_G_R and I_R) multiplied by a 3x1 vector of OLS estimators β and added to a 22x1 vector of errors for each prediction. 
+This is done by formulating the relationship between a 22x1 vector of observations of the dependent variable y (monthly gas consumption for the 22 time periods measured in the dataset from 1984-2005) as a multiplication of a 22x3 matrix X (with the first column being all 1s to represent the constant term, and the second 2 columns filled with observations of the independent variables, P_G_R and I_R) multiplied by a 3x1 vector of OLS estimators β and added to a 22x1 vector of errors for each prediction. 
 
 This is of the form:
 
