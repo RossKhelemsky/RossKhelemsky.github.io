@@ -195,8 +195,7 @@ I can then get the formula that if welfare is positive, given consumers indiffer
 
 Therefore for the tax and compensation to be welfare enhancing, the social cost of carbon must be at or above:
 
-$$
-
+$$Social.cost.carbon > \frac{-6.669}{-0.121882} = \$54.71/MTCO2$$
 
 
 
