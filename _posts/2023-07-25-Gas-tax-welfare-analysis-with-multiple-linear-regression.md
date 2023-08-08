@@ -212,9 +212,9 @@ I can then get the formula that if welfare is positive, given consumers indiffer
 
 Therefore for the tax and compensation to be welfare enhancing, the social cost of carbon must be above:
 
-$$Social.cost.carbon > \frac{-6.669}{-0.121882} = \$54.71/MTCO2$$
+$$Social.cost.carbon > \frac{-6.669}{-0.121882} = $54.71/MTCO2$$
 
-which is actually not very far off from recent estimates of SCCO2: Wang et al 2019 conducted a meta-analysis on estimates of the social cost of carbon and found a mean estimate of \$54.70 per ton of CO2 emitted(Though I'm not sure if this is in real dollars or 2019 dollars. The 2005 tax \$54.71 threshold is in real dollars). (Wang et al 2019)\\
+which is actually not very far off from recent estimates of SCCO2: Wang et al 2019 conducted a meta-analysis on estimates of the social cost of carbon and found a mean estimate of \$54.70 per ton of CO2 emitted(Though I'm not sure if this is in real dollars or 2019 dollars. The 2005 tax $54.71 threshold is in real dollars). (Wang et al 2019)
 
 
 ## Appendix A: Deriving the OLS estimators analytically
