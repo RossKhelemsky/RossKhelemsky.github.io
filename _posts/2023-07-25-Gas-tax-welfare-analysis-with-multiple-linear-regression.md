@@ -266,7 +266,7 @@ $$\begin{pmatrix}
     \beta_0\\
     \beta_1\\
     \beta_2
-\end{pmatrix}$ = $\begin{pmatrix}
+\end{pmatrix} = \begin{pmatrix}
     39.09754\\
     0.01187\\
     -14.1364
