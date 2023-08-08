@@ -69,8 +69,7 @@ the real price of gas were 0$, per capita monthly gas consumption would be
 39.09754 gal/mo. While it may not have a real-world interpretation(since the
 real price of gas isn't going to ever be 0), it is still necessary
 to compute to find the best fit line(or plane, in this instance).
-The adjusted $R^2$ of 0.8979 implies that 89.79% of the variation in gas con-
-sumption can be explained by changes in the real price of gas and real income.
+
 
 This vector of residuals, 
 
@@ -87,7 +86,7 @@ $$\vec{\beta}= \begin{matrix}
 can also be derived analytically, using some matrix algebra and calculus, as shown in Appendix A.
 
 
-The adjusted $R^2$ of 0.8979 implies that 89.79\% of the variation in gas consumption can be explained by changes in the real price of gas and real income.
+The adjusted R^2 of 0.8979 implies that 89.79% of the variation in gas consumption can be explained by changes in the real price of gas and real income.
 
 
 Now I use gglot to plot demand curves for gas (monthly gas consumption in gal/mo as a function of real price) at different levels of real monthly income held constant:
