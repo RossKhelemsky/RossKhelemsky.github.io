@@ -42,7 +42,6 @@ summary(gastaxdata[c("G", "P_G_R", "I_R")])
 
 I then retrieve summary statistics for the transformed data:
 
-(Insert figure 2 here)
 ![Summary statistics for transformed variables](https://github.com/niklasbuschmann/contrast/assets/137047194/2b0d0751-85c8-49c3-9f5e-3058378cba99)
 
 Then I run OLS multiple linear regression, where monthly gas consumption (G) is dependent on the real price of gas (P_G_R) and real monthly income (I_R). This fits a plane to the data which minimizes the sum of squared residual errors between the observed and predicted values of G, of the form: 
@@ -84,7 +83,7 @@ p1 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
 p1 + ggtitle("Estimated demand curve with I_R held constant at its mean value (2006.60)")
 {% endhighlight %}
 
-(Insert figure 4 here)
+![regression I_R held at mean value](https://github.com/niklasbuschmann/contrast/assets/137047194/daf00939-7e6c-4290-8d6d-3876b32338dd)
 
 {% highlight r %} 
 p2 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
@@ -93,7 +92,7 @@ p2 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() +
 p2 + ggtitle("Estimated demand curve with I_R held constant at its median value (1941.01)")
 {% endhighlight %}
 
-(Insert figure 5 here)
+![regression I_R held at median value](https://github.com/niklasbuschmann/contrast/assets/137047194/51266789-3007-450b-8627-1ee331d9d919)
 
 {% highlight r %} 
 p3 <- ggplot(gastaxdata, aes(x = G, y = P_G_R)) + geom_point() + 
