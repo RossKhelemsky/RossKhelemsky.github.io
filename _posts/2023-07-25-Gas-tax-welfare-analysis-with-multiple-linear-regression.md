@@ -294,11 +294,11 @@ $$\mathbf{A}\vec{x} = \vec{y} \to \frac{\partial \vec{y}}{\partial \vec{x}} = \m
 
 if:
  
- $$\vec{x}^{T}\mathbf{A} = \vec{y} , then \frac{\partial \vec{y}}{\partial \vec{x}} = \mathbf{A}$$
+ $$\vec{x}^{T}\mathbf{A} = \vec{y} \to \frac{\partial \vec{y}}{\partial \vec{x}} = \mathbf{A}$$
  
 if \textbf{A} is symmetric, which the matrix we will be working with is (as shown below), and:
 
-$$\vec{x}^{T}\mathbf{A} \vec{x} = \vec{y} , then \frac{\partial \vec{y}}{\partial \vec{x}} = 2\mathbf{A}\vec{x}$$
+$$\vec{x}^{T}\mathbf{A} \vec{x} = \vec{y} \to \frac{\partial \vec{y}}{\partial \vec{x}} = 2\mathbf{A}\vec{x}$$
 
 Appendix B: Python code for regression and interactive 3d plot
 
