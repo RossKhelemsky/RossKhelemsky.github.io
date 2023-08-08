@@ -6,12 +6,12 @@ date: June 2023
 categories: media
 ---
 
-##Abstract
+## Abstract
 
 I am going to analyze the proposed $1 increase in the gas tax in 2005 using Rstudio and time-series data on income, gas consumption, gas prices, and the prices of all other goods. I will use OLS multiple linear regression to estimate a relationship between gas consumption, real income, and the real price of gas (and find out how much gas consumption would decrease from a $1 increase in price, the effect of the tax). Then I will fit the data to the indirect utility function from Hausman (1981) to estimate the mean consumer's loss of utility from the tax. Then I will rearrange the function into the expenditure function to estimate how much is required in compensation for the consumer to be indifferent to the price change. After that, I will estimate the new consumption of gas after the tax and rebate. Then I will estimate the per capita tax revenue with and without compensation, and carbon emissions reduction with and without compensation. Finally, I will discuss the conditions under which the tax and rebate would be welfare-enhancing.[^1]
 
 
-##Importing and transforming the data
+## Importing and transforming the data
 
 Let's begin:
 
@@ -49,7 +49,7 @@ I then retrieve summary statistics for the transformed data:
 
 ![Summary statistics for transformed variables](https://github.com/niklasbuschmann/contrast/assets/137047194/2b0d0751-85c8-49c3-9f5e-3058378cba99)
 
-##Fitting, interpreting, and visualizing the model
+## Fitting, interpreting, and visualizing the model
 
 Then I run OLS multiple linear regression, where monthly gas consumption (G) is dependent on the real price of gas (P_G_R) and real monthly income (I_R). This fits a plane to the data which minimizes the sum of squared residual errors between the observed and predicted values of G, of the form: 
 
@@ -134,7 +134,7 @@ Also, we can rerun this regression in python and use plotly to create an interac
 ![Interactive 3D plot](https://github.com/niklasbuschmann/contrast/assets/137047194/d6736bba-b56f-4c2a-9d6c-7438f5edb5c7)
 Code is shown in Appendix B.
 
-##Calibrating the model to 2005 and estimating the consumer effects of the gas tax and the required compensation for the consumer to be indifferent
+## Calibrating the model to 2005 and estimating the consumer effects of the gas tax and the required compensation for the consumer to be indifferent
 
 Now that I have the regression model, I can plug in the 2005 values for I_R and P_G_R (2455.67 and 1.828, respectively) to estimate the pre-tax consumption amount. Let's call this G_notax.
 
@@ -170,7 +170,7 @@ $$\mathbf{Expend(2.828, -94682.17)} = (e^{0.01187*2.828} * -94682.17) -(\frac{1}
 
 This means that the required monthly compensation per capita is 2491.23 − 2455.67 = 35.36
 
-##Estimating the effect of the tax and compensation on tax revenue
+## Estimating the effect of the tax and compensation on tax revenue
 
 To get G(monthly gas consumption per capita) after the tax and compensa-
 tion, simply plug in 2.828 for P_G_R and 2491.23 for I_R back into the regression:
@@ -181,7 +181,7 @@ Monthly tax revenue per capita without compensation is (tax amount per gallon * 
 
 Monthly tax revenue per capita with compensation is (tax amount per gallon*gallons consumed)-rebate amount= (1 ∗ 28.6907) − 35.36 = −6.669
 
-##Welfare analysis using EPA estimates of carbon emissions from gasoline consumption
+## Welfare analysis using EPA estimates of carbon emissions from gasoline consumption
 
 Now we can use the EPA’s estimate for the amount(in metric tons) of carbon dioxide emitted per gallon of gasoline consumed(0.00889) to calculate the change in consumption emissions between no tax and tax with compensation:
 
@@ -213,7 +213,7 @@ $$Social.cost.carbon > \frac{-6.669}{-0.121882} = \$54.71/MTCO2$$
 which is actually not very far off from recent estimates of SCCO2: Wang et al 2019 conducted a meta-analysis on estimates of the social cost of carbon and found a mean estimate of \$54.70 per ton of CO2 emitted(Though I'm not sure if this is in real dollars or 2019 dollars. The 2005 tax \$54.71 threshold is in real dollars). (Wang et al 2019)\\
 
 
-##Appendix A: Deriving the OLS estimators analytically
+## Appendix A: Deriving the OLS estimators analytically
 
 I am trying to fit a linear model to the data. This means that I'm trying to predict a given level of G for a given level of P_G_R and I_R. \\
 
@@ -448,7 +448,7 @@ $$= \begin{pmatrix}
 
 which is very close to what I got originally!
 
-##Appendix B: Python code for regression and interactive 3d plot
+## Appendix B: Python code for regression and interactive 3d plot
 
 
 {% highlight py %} 
@@ -512,7 +512,7 @@ fig = go.Figure(data=[scatter, plane], layout=layout)
 fig.write_html("3d_plot.html")
 {% endhighlight %}
 
-##Appendix C:
+## Appendix C: Deriving Expenditure function from Indirect Utility
 
 I'm going to isolate I\_R in the formula for indirect utility(consumer satisfaction as a function of real income and the real price of gas) to get the expenditure function(the amount of income needed to reach a certain level of utility, given a utility function and prices):
 
@@ -524,7 +524,7 @@ $$ U* e^{\beta_1 * P\_G\_R} = I\_R + (\frac{1}{\beta_1}* (\beta_2*P\_G\_R+\frac{
 
 $$ \mathbf{Expend(P\_G\_R, U)} = \mathbf{I_R} =  (U * e^{\beta_1 * P\_G\_R}) -(\frac{1}{\beta_1} * (\beta_2 * P_{GR} + \frac{\beta_2}{\beta_1} + \beta_0))$$
 
-##Appendix D: Considerations on improving this analysis
+## Appendix D: Considerations on improving this analysis
 
 If you've made it this far, I'm open to hearing your feedback to improve on this analysis for future applications. Should I add any of the following?:
 - An explanation of the standard errors and significance of the t values for the slopes/intercept in the explanation of the regression
