@@ -193,10 +193,11 @@ The main cost to consider is the loss of tax revenue by the government after imp
 
 I can then get the formula that if welfare is positive, given consumers indifferent and government in deficit, then: loss tax revenue < (amount reduction CO2 emissions in metric tons)∗ (reduction in cost to society of 1 fewer metric ton CO2 being emitted)
 
-Therefore for the tax and compensation to be welfare enhancing, the social cost of carbon must be at or above:
+Therefore for the tax and compensation to be welfare enhancing, the social cost of carbon must be above:
 
-$$Social.cost.carbon > \frac{-6.669}{-0.121882} = \$54.71/MTCO2$$
+$$Social.cost.carbon \geq \frac{-6.669}{-0.121882} = \$54.71/MTCO2$$
 
+which is actually not very far off from recent estimates of SCCO2: Wang et al 2019 conducted a meta-analysis on estimates of the social cost of carbon and found a mean estimate of \$54.70 per ton of CO2 emitted(Pei Wang, Xiangzheng Deng, Huimin Zhou, Shangkun Yu, Estimates of the social cost of carbon: A review based on meta-analysis,Journal of Cleaner Production) (Though I'm not sure if this is in real dollars or 2019 dollars. The 2005 tax \$54.71 threshold is in real dollars.)\\
 
 
 Appendix A: Deriving the OLS estimators analytically
