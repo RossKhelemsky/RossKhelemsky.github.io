@@ -17,11 +17,11 @@ minimal: false             # use a dark header
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {title: "Home", file: "index.md"}
-  - {title: "CV", url: "https://github.com/RossKhelemsky/RossKhelemsky.github.io/files/12288170/CV_7_25_23.3.pdf"}
+  - {title: "CV", url: "https://github.com/RossKhelemsky/RossKhelemsky.github.io/files/12328918/CV_7_25_23.5.pdf"}
   - {title: "Projects", file: "projects.md"}
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
-  - {title: Mail, icon: envelope, url: "mailto:rosskhel00@gmail.com"}
+  - {title: Mail, icon: envelope, url: "mailto:rosskhelemsky00@gmail.com"}
   - {title: Github, icon: github, url: "https://github.com/RossKhelemsky"}
   - {title: Linkedin, icon: linkedin, url: "https://www.linkedin.com/in/ross-khelemsky-681953159"}
 comments:
