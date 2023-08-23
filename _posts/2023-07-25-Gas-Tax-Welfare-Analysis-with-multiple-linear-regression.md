@@ -10,7 +10,7 @@ categories: media
 
 I am going to analyze the proposed $1 increase in the gas tax in 2005 using R and time-series data on income, gas consumption, gas prices, and the prices of all other goods. I will use OLS multiple linear regression to estimate a relationship between gas consumption, real income, and the real price of gas (and find out how much gas consumption would decrease from a $1 increase in price, the effect of the tax). Then I will fit the data to the indirect utility function from Hausman (1981) to estimate the mean consumer's loss of utility from the tax. Then I will rearrange the function into the expenditure function to estimate how much is required in compensation for the consumer to be indifferent to the price change. After that, I will estimate the new consumption of gas after the tax and rebate. Then I will estimate the per capita tax revenue with and without compensation, and carbon emissions reduction with and without compensation. Finally, I will discuss the conditions under which the tax and rebate would be welfare-enhancing.(^1)(^2)
 
-1. A pdf version of this analysis is available to download [here](https://github.com/RossKhelemsky/RossKhelemsky.github.io/files/12423563/2005_Gas_Tax_Welfare_Analysis.1.pdf)
+1. A pdf version of this analysis is available to download [here](https://github.com/RossKhelemsky/RossKhelemsky.github.io/files/12423573/2005_Gas_Tax_Welfare_Analysis.3.pdf)
 
 2. Special thanks to Dr.Joseph Hughes, who taught me for intermediate micro, compiled the data for this analysis, and came up with a significant proportion of the methodology.
 
