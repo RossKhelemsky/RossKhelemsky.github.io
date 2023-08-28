@@ -82,7 +82,7 @@ real price of gas isn't going to ever be 0), it is still necessary
 to compute to find the best fit line(or plane, in this instance).
 
 
-This vector of residuals, 
+This vector of coefficients, 
 
 $$\vec{\beta}= \begin{pmatrix}
     \beta_0\\
