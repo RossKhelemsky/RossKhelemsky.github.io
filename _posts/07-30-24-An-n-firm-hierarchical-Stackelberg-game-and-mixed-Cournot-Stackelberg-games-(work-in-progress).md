@@ -2,7 +2,7 @@
 title: An n-firm hierarchical Stackelberg game and mixed Cournot-Stackelberg games (work in progress)
 author: Ross Khelemsky
 mathjax: true
-date: June 2024
+date: March 2024
 categories: media
 ---
 
