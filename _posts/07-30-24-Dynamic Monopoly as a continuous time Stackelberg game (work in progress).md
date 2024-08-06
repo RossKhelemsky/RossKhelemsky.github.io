@@ -5,4 +5,4 @@ mathjax: true
 date: July 2024
 categories: media
 ---
-Draft available [here](https://github.com/user-attachments/files/16515938/Dynamic_monopolistic_equilibrium_as_a_stackelberg_game.2.pdf)
+Draft available [here](https://github.com/user-attachments/files/16515950/Dynamic_monopolistic_equilibrium_as_a_stackelberg_game.3.pdf)
