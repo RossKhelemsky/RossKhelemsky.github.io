@@ -1,5 +1,5 @@
 ---
-title: Dynamic Monopoly as a continuous time Stackelberg game (work in progress) (work in progress)
+title: Dynamic Monopoly as a continuous time Stackelberg game (work in progress)
 author: Ross Khelemsky
 mathjax: true
 date: July 2024
